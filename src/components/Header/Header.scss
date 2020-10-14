@@ -1,0 +1,17 @@
+.Header-appear,
+.Header-enter {
+    opacity: 0;
+    // z-index: 1;
+}
+.Header-appear-active,
+.Header-enter.Header-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease;
+}
+// .Header-exit {
+//     opacity: 1;
+// }
+// .Header-exit.Header-exit-active {
+//     opacity: 0;
+//     transition: opacity 1000ms ease;
+// }

@@ -1,0 +1,79 @@
+$main-color: black;
+$main-color-hover: white;
+$transition-hover-nav-item: all 200ms ease;
+
+.Navbar-Phones-Container {
+    display: none;
+}
+
+
+
+@media (max-width: 900px) and (min-width:320px) {
+    .Navbar-Phones-Container {
+        display: block;
+    }
+    .Navbar-Container {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        line-height: 8vh;
+    }
+    .Navbar-Phones {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 -1px 15px -3px black;
+
+        position: relative;
+    }
+    li {
+        list-style: none;
+    }
+    .Logo { 
+        width: max-content; 
+    }
+    .Logo span {
+        margin: auto 1vh;
+    }
+    .Navbar-Phones-Button {
+        transform: scale(2);
+        line-height: max-content;
+        background-color: transparent;
+        border: none;
+        margin-right: 5vw;
+        transition: all 0.25s ease;
+    }
+    .Navbar-Phones-Button:hover { transform: scale(2); }
+    .Navbar-Phones-Button:focus { transform: scale(2); }
+    .Navbar-Phones-Button:active { transform: scale(2); }
+    // react-scripts start
+    .bar1, 
+    .bar2, 
+    .bar3 {
+        width: 15px;
+        height: 2px;
+        background-color: #333;
+        margin: 2px 0;
+        transition: 0.25s;
+        border-radius: 2px;
+    }
+
+    .Navbar-Items-Container {
+        position: fixed;
+        background-color: #B7CCD8;
+        border-top: thin solid black;
+        width: 100%;
+        top: calc(0vh + 60px);
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .Navbar-Item {
+        margin: auto;
+    }
+    .Navbar-Item:hover {
+        text-decoration: none;
+        color: $main-color-hover;
+    }
+}

@@ -1,0 +1,71 @@
+$main-color: black;
+$main-color-hover: white;
+$transition-hover-nav-item: all 200ms ease;
+
+.Navbar-Container {
+    width: 100%;
+    line-height: 5vh;
+    background-color: #b7ccd8;
+}
+.Navbar {
+    display: flex;
+    align-items: center;
+    padding: 1vh 6vh;
+}
+.Navbar li {
+    list-style: none;
+}
+.Logo {
+    color: $main-color;
+    min-width: 30%;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.Logo img { 
+    max-height: 6vh; 
+    mix-blend-mode: multiply; 
+}
+.Logo:hover {
+    color:  $main-color;
+    text-decoration: none;
+}
+.Navbar-Items-Container {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+.Navbar-Item {
+    color: $main-color;
+    font-size: 1.25em;
+    text-transform: capitalize;
+    padding: 1% 0px;
+    margin: 0 3%;
+    cursor: pointer;
+    position: relative;
+    transition: $transition-hover-nav-item;
+}
+.Navbar-Item:hover {
+    text-decoration: none;
+    color: $main-color-hover;
+}
+.Navbar-Item::after {    
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: $main-color;
+
+    transition: width 0.2s ease 0s, left 0.2s ease 0s;
+    width: 0;
+}
+.Navbar-Item:hover::after {
+    width: 100%; 
+    left: 0; 
+}
+
+@media (max-width: 900px) and (min-width:320px) {
+    .Navbar {
+        display: none;
+    }
+}

@@ -1,0 +1,47 @@
+.Login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Login form {
+    margin-top: 10vh;
+    min-width: 350px;
+    width: 25%;
+}
+.Login #errorLogin {
+    color: red;
+    margin: 1% 0;
+}
+.Login input {
+    margin: 1% 0;
+    height: 4vh;
+}
+.Login-Button, input {
+    width: 100%;
+}
+.Login-Button {
+    background-color: #4285F4;
+
+    padding: 3% 0;
+    margin: 6% 0;
+
+    border: none;
+    border-radius: 1em;
+}
+.Login-Button:active {
+    background-color: #0d47a1;
+}
+.Logo-Form {
+    margin-bottom: 5vh;
+    font-size: 3em;
+}
+
+@media (max-width: 900px) and (min-width:320px) {
+    .Login input {
+        margin: 1vh 0 3vh 0;
+        height: 3em;
+        border: none;
+        border-bottom: 1px solid gray
+    }
+    .Login p { margin: 0;}
+}

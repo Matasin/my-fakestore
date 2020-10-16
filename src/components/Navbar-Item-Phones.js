@@ -35,7 +35,7 @@ const NavbarItem = ({ setIsOpen, isOpen }) => {
                 }
                 return(
                     <Link to={path} className='Navbar-Item' key={id}>
-                        <li>
+                        <li onClick={() => setIsOpen(!isOpen)}>
                             {name}
                         </li>
                     </Link>

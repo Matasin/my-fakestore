@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Navbar-Phones.scss';
 
 import NavbarLogo from '../Navbar-Logo'
-import NavbarItem from '../Navbar-Item'
+import NavbarItemPhones from '../Navbar-Item-Phones'
 
 const styleWhenActive = {
     backgroundColor: 'white',
@@ -26,7 +26,7 @@ const NavbarPhones = () => {
             </div>
 
             {isOpen ? 
-                <NavbarItem setIsOpen={setIsOpen} isOpen={isOpen}/>
+                <NavbarItemPhones setIsOpen={setIsOpen} isOpen={isOpen}/>
                 : 
                 null
             }

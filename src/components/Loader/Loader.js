@@ -1,10 +1,10 @@
-import React from 'react'
-import './Loader'
+import React from 'react';
+import './loader.scss'
 
-const Loader = () => (
-    <div className="d-flex justify-content-center" style={{marginTop: '45vh'}}>
-        <div className="spinner-border" role="status">
-        </div>
-    </div>
-)
-export default Loader
+const Loader = () => {
+    return (
+        <div className="loader"><div></div><div></div><div></div><div></div></div>
+    )
+}
+
+export default Loader;

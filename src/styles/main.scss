@@ -1,0 +1,13 @@
+body { margin: 0; }
+
+// styling lazy loading
+img {
+    opacity: 0;
+    transform: scale(.97);
+}
+img[src] {
+    opacity: 1;
+    transform: scale(1);
+	transition: opacity .45s ease;
+}
+// styling lazy loading

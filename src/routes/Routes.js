@@ -21,7 +21,7 @@ const Routes = () => (
                 <Route path='/cart' component={Cart} />
                 <Route path='/login' component={Login} />
                 <Route path='/products/:id' component={ProductDetail} />
-                <Route path='/products' component={Products} />
+                <Route exact path='/products' component={Products} />
                 <Route path='/profile' component={Profile} />
 
                 {/* <Route path='*' exact={true} component={My404Component} /> */}

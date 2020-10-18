@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './nav.scss'
 
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { NAVBAR_ITEMS } from '../../constants/constants'
 import LazyImage from '../../lazy-image';
 
@@ -10,7 +10,12 @@ const Nav = () => {
     const toogleNav = () => setIsOpen(!isOpen);
     return (
         <nav className='nav'>
-            <span className='nav__logo'>Fake Shop</span>
+            <Link
+                to='/'
+                className='nav__logo'
+            >
+                Fake Shop
+            </Link>
             <div className={`nav__c-items ${isOpen ? 'nav__c-items--active' : ''}`}>
                 {NAVBAR_ITEMS.map(({ id, name, path }) => {
                     return (

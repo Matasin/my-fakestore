@@ -3,11 +3,25 @@ body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
 }
+// color for headers buttion etc
+$event-color: #303132;
+$font-color: #D3D3D3;
 
-// $sm: 576px;
-// $md: 768px;
-// $lg: 992px;
-// $xl: 1140px;
+$basic-transition: 0.35s ease;
+
+
+.btn-primary {
+    background-color: $event-color;
+    color: #ffffff;
+    padding: 10px 60px;
+    transition: all $basic-transition;
+    font-size: 18px;
+
+    &:hover {
+        background-color: #ffffff;
+        color: $event-color;
+    }
+}
 
 
 // styling lazy loading

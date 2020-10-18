@@ -1,0 +1,58 @@
+$event-color: #303132;
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+
+    background: url('../../assets/home/header-img.png') no-repeat;
+    background-size: cover;
+    background-position: right;
+
+    &__c-header {
+        background-color:  rgba(255, 255, 255, 0.50);
+        width: max-content;
+        border-radius: 1px;
+        text-align: center;
+        padding: 25px 35px;
+
+        display: flex;
+        flex-direction: column;
+    }
+    &__header {
+        font-size: 55px;
+        font-family: 'Times New Roman', Times, serif;
+        color: $event-color;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    &__btn-primary {
+        text-decoration: none;
+        margin: 20px auto;
+        width: 100px;
+    }
+    &__decoration {
+        background-color: #E4E4E4;
+        color: $event-color;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 12px 0;
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .home {
+        background-position: left;
+
+        &__c-header {
+            width: 90%;
+            padding: 25px 5px;
+        }
+        &__header {
+            font-size: 40px;
+        }
+    }
+}

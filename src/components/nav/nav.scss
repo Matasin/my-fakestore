@@ -1,5 +1,5 @@
 $bg-color: #535151;
-$item-color: #d3d3d3;
+$item-color: #D3D3D3;
 $item-color--hover: #a2c2c9;
 $item-color--active: #ffffff;
 $basic-transition: 0.2s ease;
@@ -13,8 +13,7 @@ $navHeight: 80px;
     justify-content: space-around;
     align-items: center;
 
-    box-shadow: 0px 2px 11px 2px rgba(83,81,81,0.63);
-
+    box-shadow: 0px 2px 7px 2px rgba(83, 81, 81, 0.63);
 
     &__logo,
     &__item,
@@ -27,6 +26,7 @@ $navHeight: 80px;
         letter-spacing: 3px;
         font-size: 22px;
         font-weight: 700;
+        text-decoration: none;
     }
 
     &__c-items {
@@ -38,11 +38,12 @@ $navHeight: 80px;
         text-decoration: none;
         text-transform: capitalize;
         color: $item-color;
-        transition: color $basic-transition;
+        transition: all $basic-transition;
         padding: 5px 10px;
 
         &:hover {
             color: $item-color--hover;
+            border-bottom: thin solid rgba(255, 255, 255, 0.75);
         }
     }
 
@@ -51,7 +52,7 @@ $navHeight: 80px;
         align-items: center;
 
         & img {
-            margin: 0 5px;
+            margin: 0 8px;
         }
     }
 
@@ -69,12 +70,13 @@ $navHeight: 80px;
             transition: all $basic-transition;
         }
     }
-
-    // it is here bcs this is a class adding by state in nav component
-    &__item--active {
-        color: $item-color--active;
-    }
 }
+// style applying by navlink and have to be here
+.nav__item--active {
+    color: $item-color--active;
+    border-bottom: thin solid #ffffff;
+}
+
 @media only screen and (max-width: 1400px) {
     .nav {
         &__c-items {
@@ -123,6 +125,7 @@ $navHeight: 80px;
 
             transform: translateX(30%);
             opacity: 0;
+            visibility: hidden;
 
             transition: all $basic-transition;
         }
@@ -136,17 +139,19 @@ $navHeight: 80px;
 .nav__c-items--active {
     transform: translateX(0%);
     opacity: 1;
+    visibility: visible;
 }
 
 .nav__hamburger--active {
-    box-shadow: 0px 0px 5px 1px rgba(255,255,255,0.57);
-}
-.nav__hamburger--active div:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
-}
-.nav__hamburger--active div:nth-child(2) {
-    opacity: 0;
-}
-.nav__hamburger--active div:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.57);
+
+    & div:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+    & div:nth-child(2) {
+        opacity: 0;
+    }
+    & div:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
 }

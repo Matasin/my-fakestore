@@ -1,0 +1,146 @@
+$bg-color: #535151;
+$item-color: #D3D3D3;
+$item-color--hover: #A2C2C9;
+$item-color--active: #FFFFFF;
+$basic-transition: .2s ease;
+$navHeight: 80px;
+
+.nav {
+    background-color: $bg-color;
+    min-height: $navHeight;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;   
+
+    &__logo,
+    &__item,
+    &__hamburger { 
+        cursor: pointer; 
+    }
+
+    &__logo {
+        color: $item-color;
+        letter-spacing: 3px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    &__c-items {
+        width: 35%;
+        display: flex;
+        justify-content: space-around;
+    }
+    &__item {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: $item-color;
+        transition: color $basic-transition;
+        padding: 5px 10px;
+
+        &:hover { color: $item-color--hover; }
+    }
+
+    &__user-avatar {
+        display: flex;
+        align-items: center;
+
+        & img {
+            max-height: 20px;
+            margin: 0 5px;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        background-color: #FFFFFF;
+        height: 38px;
+        width: 40px;
+
+        & div {
+            width: 25px;
+            height: 2px;
+            background-color: black;
+            margin: 8px auto;
+            transition: all $basic-transition;
+        }
+    }
+
+
+
+    // it is here bcs this is a class adding by state in nav component
+    &__item--active {
+        color: $item-color--active;
+    }
+}
+@media only screen and (max-width: 1400px){
+    .nav {
+        &__c-items {
+            width: 45%;
+        }
+    }
+}
+@media only screen and (max-width: 1100px){
+    .nav {
+        &__c-items {
+            width: 55%;
+        }
+    }
+}
+@media only screen and (max-width: 900px){
+    .nav {
+        &__c-items {
+            width: 65%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .nav {
+        justify-content: space-between;
+        padding: 0 15px;
+        &__hamburger {
+            display: block;
+        }
+
+        &__c-items {
+            position: fixed;
+            background-color: $bg-color;
+            top: calc(0vh + #{$navHeight});
+            bottom: 0;
+            left: 0;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            padding-left: 10%;
+
+            transform: translateX(30%);
+            opacity: .0; 
+
+            transition: all $basic-transition;
+        }
+        &__item {
+            padding: 40px 30px;
+            width: 65%;
+        }
+    }
+}
+
+.nav__c-items--active {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.nav__hamburger--active div:nth-child(1){
+    transform: rotate(45deg) translate(6px, 8px);
+}
+.nav__hamburger--active div:nth-child(2){
+    opacity: 0;
+}
+.nav__hamburger--active div:nth-child(3){
+    transform: rotate(-45deg) translate(6px, -8px);
+}
+
+
+

@@ -20,11 +20,11 @@ export class LazyImage extends React.Component {
 
   // Just render the image with data-src
   render() {
-    const { alt, src, srcset, sizes, width, height } = this.props;
+    const { alt, src, srcset, sizes, width, height, className } = this.props;
     return (
       <img
         alt={alt}
-        className="lazy"
+        className={`lazy ${className}`}
         data-src={src}
         data-srcset={srcset}
         data-sizes={sizes}

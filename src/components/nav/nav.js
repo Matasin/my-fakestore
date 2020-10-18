@@ -27,6 +27,8 @@ const Nav = () => {
                                     <LazyImage
                                         src={process.env.PUBLIC_URL + './assets/user-icon.svg'}
                                         alt='user-icon'
+                                        height='22px'
+                                        width='22px'
                                     />
                                     {name}
                                 </div>

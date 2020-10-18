@@ -7,7 +7,9 @@ import LazyImage from '../../lazy-image';
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const toogleNav = () => setIsOpen(!isOpen);
+    const toogleNav = () => {
+        setIsOpen(!isOpen);
+    }
     return (
         <nav className='nav'>
             <Link

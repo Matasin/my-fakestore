@@ -25,4 +25,25 @@ export const NAVBAR_ITEMS = [
         path: '/login',
     },
 ]
-// When want to add new item it is require to create new object with uniqe 'id', 'name' and 'path' see example above
+export const SOCIAL_MEDIA = [
+    {
+        id: 1,
+        src: 'i-fb.svg',
+        path: 'https://www.facebook.com/',
+    },
+    {
+        id: 2,
+        src : 'i-twitter.svg',
+        path: 'https://twitter.com/?lang=pl',
+    },
+    {
+        id: 3,
+        src: 'i-pinterest.svg',
+        path: 'https://pl.pinterest.com/',
+    },
+    {
+        id: 4,
+        src: 'i-ig.svg',
+        path: 'https://www.instagram.com/?hl=pl',
+    },
+]

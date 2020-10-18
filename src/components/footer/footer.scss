@@ -1,0 +1,116 @@
+$bg-color: #303132;
+$color-event: #303132;
+$font-color: #d3d3d3;
+$font-color--secondary: #ffffff;
+$basic-transition: 0.2s ease;
+
+$invert-before: 50%;
+$invert-after: 90%;
+
+.footer {
+    background-color: $bg-color;
+    color: $font-color;
+    padding: 0 100px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    &__social-media,
+    &__newsletter,
+    &__assistance {
+        width: 30%;
+        text-align: center;
+    }
+
+    &__info-block {
+        text-transform: uppercase;
+        font-size: 13px;
+        margin: 20px 0;
+    }
+
+    &__social-media {
+        & img {
+            margin: 0 5px;
+            cursor: pointer;
+            // &:hover {
+            //     -webkit-filter: invert($invert-after);
+            //     filter: invert($invert-after);
+            // }
+        }
+    }
+
+    &__newsletter {
+        form {
+            display: flex;
+            flex-direction: column;
+
+            & input,
+            & button {
+                margin: 5px 0;
+            }
+
+            & button {
+                font-size: 13px;
+                color: $color-event;
+                background-color: $font-color;
+
+                &:hover {
+                    background-color: #ffffff;
+                    box-shadow: unset;
+                }
+            }
+            & input {
+                padding: 8px 25px;
+                background-color: #535151;
+                border: none;
+                color: #ffffff;
+                transition: all $basic-transition;
+                &:hover,
+                &:focus {
+                    background-color: #777777;
+                    outline: none;
+                }
+                &::placeholder {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    &__copy-right {
+        margin: 0;
+        text-align: center;
+        background-color: $bg-color;
+        color: $font-color;
+        padding: 50px 0;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .footer {
+        padding: 0 50px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .footer {
+        justify-content: space-between;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .footer {
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .footer {
+        flex-wrap: wrap;
+        & div {
+            flex: 100%;
+            margin: 0 10%;
+        }
+
+    }
+}
+
+

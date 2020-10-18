@@ -5,19 +5,22 @@ import { Link } from "react-router-dom";
 
 const Home = () => (
     <>
-        <div className='home'>
+        <div 
+            className='home lazy' 
+            data-bg={process.env.PUBLIC_URL + `./assets/home/header-img.png`}
+        >
             <div className='home__c-header'>
-                <header className='home__header'>FALL &amp; WINTER</header>
+                <header className='home__header'>fall &amp; winter</header>
                 <Link
                     className='home__btn-primary btn-primary'
                     to='/products'
                 >
-                    Shop Now
+                    shop now
                 </Link>
             </div>
         </div>
         <div className='home__decoration'>
-            FREE SHIPPING WORLDWIDE
+            free shipping worldwide
         </div>
     </>
 )

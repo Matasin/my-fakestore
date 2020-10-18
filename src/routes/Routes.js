@@ -11,6 +11,7 @@ const ProductDetail = lazy(() => import('../pages/product-detail/product-detail'
 const Products = lazy(() => import('../pages/products/products'));
 const Profile = lazy(() => import('../pages/profile/profile'));
 
+const Footer = lazy(() => import('../components/footer/footer'));
 
 const Routes = () => (
     <Router>
@@ -28,6 +29,7 @@ const Routes = () => (
 
                 {/* <Route path='*' exact={true} component={My404Component} /> */}
             </Switch>
+            <Footer/>
         </Suspense>
     </Router>
 );

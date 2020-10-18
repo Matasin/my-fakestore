@@ -124,8 +124,9 @@ $navHeight: 80px;
             padding-left: 10%;
 
             transform: translateX(30%);
-            opacity: 0;
             visibility: hidden;
+            opacity: 0;
+            
 
             transition: all $basic-transition;
         }
@@ -138,8 +139,8 @@ $navHeight: 80px;
 
 .nav__c-items--active {
     transform: translateX(0%);
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
 }
 
 .nav__hamburger--active {

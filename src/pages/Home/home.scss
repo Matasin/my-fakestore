@@ -6,12 +6,11 @@ $event-color: #303132;
     align-items: center;
     min-height: 70vh;
 
-    background: url('../../assets/home/header-img.png') no-repeat;
     background-size: cover;
     background-position: right;
 
     &__c-header {
-        background-color:  rgba(255, 255, 255, 0.50);
+        background-color:  rgba(255, 255, 255, 0.30);
         width: max-content;
         border-radius: 1px;
         text-align: center;
@@ -26,6 +25,7 @@ $event-color: #303132;
         color: $event-color;
         font-weight: 700;
         letter-spacing: 1px;
+        text-transform: uppercase;
     }
     &__btn-primary {
         text-decoration: none;
@@ -39,6 +39,7 @@ $event-color: #303132;
         text-align: center;
         padding: 12px 0;
         font-size: 14px;
+        text-transform: uppercase;
     }
 
 }

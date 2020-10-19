@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/cart/cart.js"],"names":["Cart"],"mappings":"+GAAA,2BAIeA,UAFF,kBAAQ","file":"static/js/8.ed50a4ec.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst Cart = () => ( <div>Cart</div> )\r\n\r\nexport default Cart;"],"sourceRoot":""}

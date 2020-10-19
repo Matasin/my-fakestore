@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/product-detail/product-detail.js"],"names":["ProductDetail"],"mappings":"gHAAA,2BAIeA,UAFO,kBAAQ","file":"static/js/10.393e00b5.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nconst ProductDetail = () => ( <div>Product Detail</div> )\r\n\r\nexport default ProductDetail;"],"sourceRoot":""}

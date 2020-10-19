@@ -1,0 +1,2 @@
+(this["webpackJsonpfake-store"]=this["webpackJsonpfake-store"]||[]).push([[7],{39:function(e,t,n){},47:function(e,t,n){"use strict";n.r(t);var o=n(0),a=n.n(o),r=(n(39),n(1)),c=n(11);t.default=function(){var e=Object(r.f)();return a.a.createElement("div",{className:"error"},a.a.createElement("h3",null,"404 Not page found"),a.a.createElement(c.b,{to:"/",onClick:function(){e.push("/"),e.go(0)}},"Go to  Home"))}}}]);
+//# sourceMappingURL=7.d37d92f8.chunk.js.map

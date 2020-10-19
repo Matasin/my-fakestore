@@ -4,11 +4,11 @@ import './product-card.scss'
 import { Link } from 'react-router-dom'
 import LazyImage from '../../lazy-image'
 
-const ProductCard = ({ id, title, price, descritpion, category }) => {
+const ProductCard = ({ id, title, price, btnText, className }) => {
     const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.png`
 
     return (
-        <div className='card-product'>
+        <div className={`card-product ${className}`}>
             <Link
                 to={`shop/${id}`}
                 className='link'
@@ -20,10 +20,14 @@ const ProductCard = ({ id, title, price, descritpion, category }) => {
                         height='100%'
                         className=''
                     />
-                    <button className='btn-primary'>quick view</button>
+                    <button className='btn-primary'>
+                        <span>{btnText}</span>
+                    </button>
                 </div>
-                <h3>{title}</h3>
-                <p>${price}</p>
+                <div className='card-product__label'>
+                    <h3>{title}</h3>
+                    <p>${price}</p>
+                </div>
             </Link>
         </div>
     )

@@ -1,8 +1,12 @@
 $max-property: 250px;
+
 .card-product {
     width: $max-property;
+    // need to force that value bcs of bg color
     min-height: $max-property;
-    height: max-content;
+    min-width: $max-property;
+    max-height: $max-property;
+     // need to force that value bcs of bg color
     cursor: pointer;
     overflow: hidden;
     text-align: center;
@@ -10,11 +14,13 @@ $max-property: 250px;
     &__wrapper {
         overflow: hidden;
         position: relative;
+
         & img {
+            min-height: $max-property;
             max-height: $max-property;
             max-width: $max-property;
             mix-blend-mode: multiply;
-            transition: transform .1s .1s, opacity .4s cubic-bezier(0, 0.38, 0.8, 1.3);
+            transition: transform .3s .1s, opacity .4s linear;
         }
         & .btn-primary {
             position: absolute;
@@ -38,23 +44,29 @@ $max-property: 250px;
         }
     }
     &:hover img {
-        transform: scale(1.1);
+        transform: scale(1.15);
     }
     &:hover .btn-primary  {
         opacity: 1;
         visibility: visible;
         transform: translateY(0%);
     }
-    & h3, p {
-        text-align: left;
-    }
-    & h3 {
-        color: #303132;
-        font-size: 15px;
-        font-weight: 400;
-        text-transform: uppercase;
-    }
-    & p {
-        color: #777777;
+
+    &__label {
+        & h3, p {
+            text-align: left;
+        }
+        & h3 {
+            color: #303132;
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+        & p {
+            color: #777777;
+            font-size: 14px;
+            margin: 0;
+        }
     }
 }

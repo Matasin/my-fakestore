@@ -10,7 +10,7 @@ $event-color: #303132;
     background-position: right;
 
     &__c-header {
-        background-color:  rgba(255, 255, 255, 0.30);
+        background-color: rgba(255, 255, 255, 0.3);
         width: max-content;
         border-radius: 1px;
         text-align: center;
@@ -21,30 +21,123 @@ $event-color: #303132;
     }
     &__header {
         font-size: 55px;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: "Times New Roman", Times, serif;
         color: $event-color;
         font-weight: 700;
         letter-spacing: 1px;
         text-transform: uppercase;
     }
+
     &__btn-primary {
         text-decoration: none;
         margin: 20px auto;
         width: 100px;
     }
+
     &__decoration {
-        background-color: #E4E4E4;
+        background-color: #e5e5e5;
         color: $event-color;
         letter-spacing: 1px;
         text-align: center;
-        padding: 12px 0;
+        padding: 14px 0;
         font-size: 14px;
         text-transform: uppercase;
     }
 
+    &__label-collection {
+        text-align: center;
+        & h3,
+        p {
+            text-transform: uppercase;
+            color: #303132;
+            letter-spacing: 6px;
+            margin: 50px;
+        }
+        & h3 {
+            font-size: 36px;
+            font-weight: 600;
+            font-family: "Times New Roman", Times, serif;
+        }
+        & div {
+            width: 35px;
+            height: 1px;
+            background-color: #303132;
+            margin: auto;
+        }
+        & p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+    &__c-cards {
+        width: 60%;
+        margin: 80px auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__card {
+        margin: 0 10px;
+
+        // havva write this bcs it allow to manipulate button
+        & .card-product__wrapper .btn-primary {
+            transform: translateY(0%);
+            opacity: 1;
+            visibility: visible;
+            height: 60px;
+
+            padding: 0 5px;
+            background-color: #303132;
+            font-size: 13px;
+            letter-spacing: 0;
+            color: #ffffff;
+            text-transform: uppercase;
+
+            // transition for text
+            &::before,
+            span {
+                transition: color 0.2s linear;
+                transition-delay: .15s;
+            }
+
+            // specify text after gover
+            &::before {
+                content: "view details";
+                position: absolute;
+                color: transparent;
+                left: 0;
+                right: 0;
+            }
+        }
+        & p {
+            display: none;
+        }
+
+        &:hover .card-product__wrapper .btn-primary {
+            // text before
+            & span {
+                color: transparent;
+            }
+            // text affter
+            &::before {
+                color: #ffffff;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1000px) {
+    .home {
+        &__c-cards {
+            width: 80%;
+            flex-wrap: wrap;
+        }
+        &__card {
+            flex: 40%;
+        }
+    }
+}
+@media only screen and (max-width: 900px) {
     .home {
         background-position: center;
     }
@@ -59,6 +152,14 @@ $event-color: #303132;
         }
         &__header {
             font-size: 40px;
+        }
+
+        &__c-cards {
+            width: 90%;
+            flex-wrap: wrap;
+        }
+        &__card {
+            flex: 100%;
         }
     }
 }

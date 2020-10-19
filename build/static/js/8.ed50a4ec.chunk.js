@@ -1,0 +1,2 @@
+(this["webpackJsonpfake-store"]=this["webpackJsonpfake-store"]||[]).push([[8],{40:function(e,t,n){"use strict";n.r(t);var a=n(0),r=n.n(a);t.default=function(){return r.a.createElement("div",null,"Cart")}}}]);
+//# sourceMappingURL=8.ed50a4ec.chunk.js.map

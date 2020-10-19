@@ -44,6 +44,11 @@ $event-color: #303132;
 
 }
 
+@media only screen and (max-width: 1000px) {
+    .home {
+        background-position: center;
+    }
+}
 @media only screen and (max-width: 768px) {
     .home {
         background-position: left;

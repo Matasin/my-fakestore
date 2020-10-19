@@ -6,8 +6,8 @@ export const NAVBAR_ITEMS = [
     },
     {
         id: 2,
-        name: 'products',
-        path : '/products',
+        name: 'shop',
+        path : '/shop',
     },
     {
         id: 3,

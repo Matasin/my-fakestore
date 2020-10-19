@@ -8,10 +8,12 @@ const Cart = lazy(() => import('../pages/cart/cart'));
 const Home = lazy(() => import('../pages/home/home'));
 const Login = lazy(() => import('../pages/login/login'));
 const ProductDetail = lazy(() => import('../pages/product-detail/product-detail'));
-const Products = lazy(() => import('../pages/products/products'));
+const Shop = lazy(() => import('../pages/shop/shop'));
 const Profile = lazy(() => import('../pages/profile/profile'));
 
 const Footer = lazy(() => import('../components/footer/footer'));
+
+const Page404 = lazy(() => import('../pages/page404/page404'));
 
 const Routes = () => (
     <Router>
@@ -23,11 +25,11 @@ const Routes = () => (
                 <Route exact path='/' component={Home} />
                 <Route path='/cart' component={Cart} />
                 <Route path='/login' component={Login} />
-                <Route path='/products/:id' component={ProductDetail} />
-                <Route exact path='/products' component={Products} />
+                <Route exact path='/shop' component={Shop} />
+                <Route path='/shop/:id' component={ProductDetail} />
                 <Route path='/profile' component={Profile} />
 
-                {/* <Route path='*' exact={true} component={My404Component} /> */}
+                <Route path='*' exact={true} component={Page404} />
             </Switch>
             <Footer/>
         </Suspense>

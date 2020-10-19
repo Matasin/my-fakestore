@@ -1,0 +1,13 @@
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #303132;
+    margin: 28.75vh;
+    & h3 {
+        letter-spacing: 1px;
+    }
+    & a {
+    }
+}

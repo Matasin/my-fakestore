@@ -12,7 +12,6 @@ $basic-transition: 0.35s ease;
 .btn-primary {
     background-color: $event-color;
     color: #ffffff;
-    border: none;
     padding: 10px 60px;
     transition: all $basic-transition;
     font-size: 18px;
@@ -29,6 +28,9 @@ $basic-transition: 0.35s ease;
         outline: none;
     }
 }
+.link {
+    text-decoration: none;
+}
 
 // styling lazy loading
 .lazy {
@@ -39,3 +41,4 @@ $basic-transition: 0.35s ease;
     transition: opacity 0.45s ease;
 }
 // styling lazy loading
+

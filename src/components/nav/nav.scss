@@ -40,6 +40,7 @@ $navHeight: 80px;
         color: $item-color;
         transition: all $basic-transition;
         padding: 5px 10px;
+        border-bottom: thin solid transparent;
 
         &:hover {
             color: $item-color--hover;

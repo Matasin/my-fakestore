@@ -32,10 +32,13 @@ $invert-after: 90%;
         & img {
             margin: 0 5px;
             cursor: pointer;
-            // &:hover {
-            //     -webkit-filter: invert($invert-after);
-            //     filter: invert($invert-after);
-            // }
+            border-radius: 10px;
+
+            transition: all $basic-transition;
+            &:hover {
+                background-color: gray;
+
+            }
         }
     }
 

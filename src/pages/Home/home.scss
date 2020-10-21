@@ -96,8 +96,8 @@ $event-color: #303132;
             // transition for text
             &::before,
             span {
-                transition: color 0.2s linear;
-                transition-delay: .15s;
+                transition: color 0.1s linear;
+                transition-delay: .1s;
             }
 
             // specify text after gover
@@ -109,11 +109,15 @@ $event-color: #303132;
                 right: 0;
             }
         }
-        & p {
+        // removing label bcs i dont have data here
+        & .card-product__label {
             display: none;
+            visibility: hidden;
         }
 
-        &:hover .card-product__wrapper .btn-primary {
+        // after hover on card product 
+        &:hover .btn-primary {
+            background-color: #867878;
             // text before
             & span {
                 color: transparent;

@@ -3,7 +3,7 @@ import './home.scss'
 
 import { Link } from "react-router-dom";
 import ITEMS from '../../context/products.json'
-import ProductCard from '../../components/product-card/product-card'
+import CardProduct from '../../components/card-product/card-product'
 
 const Home = () => (
     <>
@@ -28,17 +28,17 @@ const Home = () => (
             <p>must have items</p>
         </div>
         <div className='home__c-cards'>
-            <ProductCard
+            <CardProduct
                 id={ITEMS[5].id}
                 btnText={"I'am item"}
                 className='home__card'
             />
-            <ProductCard
+            <CardProduct
                 id={ITEMS[19].id}
                 btnText={"I'am item too"}
                 className='home__card'
             />
-            <ProductCard
+            <CardProduct
                 id={ITEMS[6].id}
                 btnText={"Hey, so am I"}
                 className='home__card'

@@ -1,3 +1,38 @@
-.shop__card {
-    margin: 0 auto;
+.shop {
+    margin: 75px auto;
+    width: 65%;
+
+    &__header {
+        font-size: 20px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #303132;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__content-c {
+        margin-top: 75px;
+        display: flex;
+    }
+
+    &__filters {
+        width: 250px;
+    }
+
+    &__products {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: calc(100% - 250px);
+
+        & .sort {
+            flex: 100%;
+            text-align: right;
+            margin: 20px 0 60px;
+        }
+    }
+    &__card {
+        margin: 10px auto;
+    }
 }

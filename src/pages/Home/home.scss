@@ -32,6 +32,7 @@ $event-color: #303132;
         text-decoration: none;
         margin: 20px auto;
         width: 100px;
+        padding: 10px 60px;
     }
 
     &__decoration {
@@ -97,7 +98,7 @@ $event-color: #303132;
             &::before,
             span {
                 transition: color 0.1s linear;
-                transition-delay: .1s;
+                transition-delay: 0.1s;
             }
 
             // specify text after gover
@@ -115,7 +116,7 @@ $event-color: #303132;
             visibility: hidden;
         }
 
-        // after hover on card product 
+        // after hover on card product
         &:hover .btn-primary {
             background-color: #867878;
             // text before

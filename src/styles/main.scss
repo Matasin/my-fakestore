@@ -13,7 +13,6 @@ $basic-transition: 0.35s ease;
 .btn-primary {
     background-color: $event-color;
     color: #ffffff;
-    padding: 10px 60px;
     transition: all $basic-transition;
     font-size: 18px;
     text-transform: capitalize;
@@ -37,10 +36,14 @@ $basic-transition: 0.35s ease;
 // styling lazy loading
 .lazy {
     opacity: 0;
+    transform: translateY(-5px);
+    transform: scale(0.98);
 }
 .loaded {
     opacity: 1;
-    transition: opacity 0.45s ease;
+    transform: translateY(0px);
+    transform: scale(1);
+    transition: all 0.45s ease;
 }
 // styling lazy loading
 

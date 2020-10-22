@@ -1,0 +1,16 @@
+.search {
+    &__input {
+        outline: none;
+        border: 1px solid #330011;
+        transition: all .3s ease;
+
+        &:focus {
+            background-color: #F3F3F3;
+        }
+        &::placeholder {
+            color: #303132;
+            font-size: 15px;
+            font-family: "Raleway", sans-serif;
+        }
+    }
+}

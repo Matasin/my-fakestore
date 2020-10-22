@@ -25,14 +25,33 @@
         justify-content: space-between;
         flex-wrap: wrap;
         width: calc(100% - 250px);
-
-        & .sort {
-            flex: 100%;
-            text-align: right;
-            margin: 20px 0 60px;
-        }
     }
+
     &__card {
         margin: 10px auto;
     }
+}
+
+.settings-right {
+    flex: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 60px;
+    padding: 0 30px;
+
+    &__search {
+
+        & input {
+            padding: 11.5px 15px;
+            width: 400px;
+            max-width: 150px;
+
+            &:focus {
+                max-width: 400px;
+                border-color: transparent transparent #330011 transparent;
+            }
+        }
+    }
+
 }

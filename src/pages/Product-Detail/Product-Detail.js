@@ -8,8 +8,8 @@ const ProductDetail = ({match}) => {
     if(!product) return <div>We don't have that products, check url</div>
 
     const { id, title, price, description, category } = product;
-    const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.png`
 
+    const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.png`
 
     return (
         <div>
@@ -18,7 +18,7 @@ const ProductDetail = ({match}) => {
                 src={Image}
                 alt='product-card'
                 height='100%'
-                className=''
+                className='lazy'
             />
             <p>{ title }</p>
             <p>{ price }</p>

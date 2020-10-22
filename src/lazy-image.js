@@ -24,7 +24,7 @@ export class LazyImage extends React.Component {
         return (
             <img
                 alt={alt}
-                className={`lazy ${className}`}
+                className={`lazy ${className ? className : ''}`}
                 data-src={src}
                 width={width}
                 height={height}

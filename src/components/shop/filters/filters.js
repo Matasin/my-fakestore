@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import './filters.scss'
 
 const Filters = ({ className }) => {
+
     const [isOpen, setIsOpen] = useState({
         price: false,
         colors: false,
         size: false,
-    })
+    });
+
+    const setSetting = ( value ) => {
+        setIsOpen({ value : !isOpen.value})
+    }
     return (
         <div className={`filters ${className}`}>
             <div className='filters__header'>Filter by</div>
@@ -18,6 +23,7 @@ const Filters = ({ className }) => {
                     >
                         Price
                     </button>
+                    
                     <div className={`filters__content ${isOpen.price ? 'filters__content--active' : ''}`}>Slider</div>
                 </li>
                 <li>

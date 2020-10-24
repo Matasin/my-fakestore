@@ -1,5 +1,5 @@
 import React from 'react';
-import Routess from './routes/routes';
+import Routess from './routes/routes.js';
 
 const App = () => <Routess/>
 

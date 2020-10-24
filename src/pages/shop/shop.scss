@@ -41,14 +41,14 @@
     padding: 0 30px;
 
     &__search {
-
+        width: 50%;
         & input {
             padding: 11.5px 15px;
-            width: 400px;
+            width: 100%;
             max-width: 150px;
 
             &:focus {
-                max-width: 400px;
+                max-width: 100%;
                 border-color: transparent transparent #330011 transparent;
             }
         }

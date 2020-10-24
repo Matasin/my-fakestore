@@ -17,9 +17,30 @@ const Shop = () => {
         const results = ITEMS.filter(({ title }) => (
             title.toLowerCase().includes(searchTerm.toLowerCase())
         ));
-        setSearchResults(results);
+        setSearchResults(results)
     }, [searchTerm])
-    const handleChange = (event) => setSearchTerm(event.target.value);
+
+    const resultAtoZ = () => {
+        const resultsAZ = ITEMS.sort((a, b) => a.title.localeCompare(b.title));
+        setSearchResults([...resultsAZ]);
+    }
+    const resultZtoA = () => {
+        const resultsZA = ITEMS.sort((a, b) => b.title.localeCompare(a.title));
+        setSearchResults([...resultsZA]);
+    }
+    const resultLowToHigh = () => {
+        const resultsLtH = ITEMS.sort((a, b) => a.price - b.price);
+        setSearchResults([...resultsLtH]);
+    }
+    const resultHighToLow = () => {
+        const resultsHtL = ITEMS.sort((a, b) => b.price - a.price);
+        setSearchResults([...resultsHtL]);
+    }
+    const resultNewest = () => {
+        const resultsNewest = ITEMS.sort((a, b) => a.id + 1 - b.id + 1);
+        setSearchResults([...resultsNewest]);
+    }
+    const handleSearchByName = (event) => setSearchTerm(event.target.value);
 
     return (
         <div className='shop'>
@@ -32,11 +53,19 @@ const Shop = () => {
                         <Search
                             className='settings-right__search'
                             value={searchTerm}
-                            handleChange={handleChange}
+                            handleChange={handleSearchByName}
                         />
-                        <Sort className='settings-right__sort' />
+                        {/* <button onClick={resultNewest}>new</button> */}
+                        <Sort
+                            className='settings-right__sort'
+                            AtoZ={resultAtoZ}
+                            ZtoA={resultZtoA}
+                            HightToLow={resultHighToLow}
+                            LowToHigh={resultLowToHigh}
+                            Newest={resultNewest}
+                            setSearchResults={setSearchResults}
+                        />
                     </div>
-
 
                     {searchResults.length === 0 ?
                         <h5 style={{ width: '100%', textAlign: 'center' }}>Couldn't find this item</h5>

@@ -26,6 +26,7 @@ export class LazyImage extends React.Component {
                 alt={alt}
                 className={`lazy ${className ? className : ''}`}
                 data-src={src}
+                src={src}
                 width={width}
                 height={height}
             />

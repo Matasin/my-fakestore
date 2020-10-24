@@ -1,21 +1,43 @@
 import React, { useState } from 'react';
 import './sort.scss'
 
-const options = [
-    'Newest',
-    'Price (low to high)',
-    'Price (high to low)',
-    'Name A-Z',
-    'Name Z-A',
-]
+const Sort = ({ className, AtoZ, ZtoA, HightToLow, LowToHigh, setSearchResults, Newest }) => {
 
-const Sort = ({ className }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [label, setLabel] = useState('sort by');
 
-    const handleSet = (option) => {
-        setLabel(option);
+    const sortOptions = [
+        {
+            id: 1,
+            label: 'Newest',
+            setting: Newest
+        },
+        {
+            id: 2,
+            label: 'Price (high to low)',
+            setting: HightToLow
+        },
+        {
+            id: 3,
+            label: 'Price (low to high)',
+            setting: LowToHigh
+        },
+        {
+            id: 4,
+            label: 'Name A-Z',
+            setting: AtoZ
+        },
+        {
+            id: 5,
+            label: 'Name Z-A',
+            setting: ZtoA
+        },
+    ];
+
+    const handleSet = (label, setting) => {
+        setLabel(label);
         setIsOpen(!isOpen);
+        setSearchResults(setting);
     }
 
     return (
@@ -30,13 +52,13 @@ const Sort = ({ className }) => {
             {
                 isOpen ?
                     <ul className='sort__list'>
-                        {options.map((option, index) => {
+                        {sortOptions.map(({id, label, setting}) => {
                             return (
                                 <li
-                                    key={index}
-                                    onClick={() => handleSet(option)}
+                                    key={id}
+                                    onClick={() => handleSet(label, setting)}
                                 >
-                                    {option}
+                                    {label}
                                 </li>
                             )
                         })}

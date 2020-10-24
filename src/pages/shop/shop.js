@@ -37,7 +37,7 @@ const Shop = () => {
         setSearchResults([...resultsHtL]);
     }
     const resultNewest = () => {
-        const resultsNewest = ITEMS.sort((a, b) => a.id + 1 - b.id + 1);
+        const resultsNewest = ITEMS.sort((a, b) => a.id - b.id + 1);
         setSearchResults([...resultsNewest]);
     }
     const handleSearchByName = (event) => setSearchTerm(event.target.value);

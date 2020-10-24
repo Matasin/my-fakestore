@@ -9,11 +9,11 @@ const Filters = ({ className }) => {
         size: false,
     });
 
-    const handleSetIsOpen = (label, setting) => {
-        // setLabel(label);
-        setIsOpen(!isOpen);
-        // setSearchResults(setting);
-    }
+    // const handleSetIsOpen = (label, setting) => {
+    //     // setLabel(label);
+    //     setIsOpen(!isOpen);
+    //     // setSearchResults(setting);
+    // }
 
     const filterOptions = [
         {

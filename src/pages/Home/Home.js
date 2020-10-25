@@ -9,7 +9,7 @@ const Home = () => (
     <>
         <div
             className='home lazy'
-            data-bg={process.env.PUBLIC_URL + `./assets/home/header-img.png`}
+            data-bg={`/${process.env.PUBLIC_URL}./assets/home/header-img.png`}
         >
             <div className='home__c-header'>
                 <header className='home__header'>fall &amp; winter</header>

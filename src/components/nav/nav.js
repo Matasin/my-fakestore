@@ -32,7 +32,7 @@ const Nav = () => {
                             >
                                 <div className='nav__user-avatar'>
                                     <LazyImage
-                                        src={process.env.PUBLIC_URL + './assets/user-icon.svg'}
+                                        src={`/${process.env.PUBLIC_URL}./assets/user-icon.svg`}
                                         alt='user-icon'
                                         height='22px'
                                         width='22px'

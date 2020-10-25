@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loader from '../components/loader/loader'
 
 const Nav = lazy(() => import('../components/nav/nav'));
+// const CrumbsBread = lazy(() => import('../components/crumbs-bread/crumbs-bread'));
 
 const Cart = lazy(() => import('../pages/cart/cart'));
 const Home = lazy(() => import('../pages/home/home'));
@@ -21,13 +22,13 @@ const Routes = () => (
             fallback={<Loader />}
         >
             <Nav/>
+            {/* <CrumbsBread/> */}
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/cart' component={Cart} />
                 <Route path='/login' component={Login} />
                 <Route exact path='/shop' component={Shop} />
-                {/* <Route path='/shop/:id'  component={ProductDetail} /> */}
-                <Route path='/shop/:id' render={props => <ProductDetail {...props} />} />
+                <Route path='/shop/:id'  component={ProductDetail} />
                 <Route path='/profile' component={Profile} />
 
                 <Route path='*' exact={true} component={Page404} />

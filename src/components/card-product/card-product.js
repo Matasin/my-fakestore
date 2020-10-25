@@ -12,7 +12,7 @@ const CardProduct = ({ id, title, price, btnText, className }) => {
             <Link to={`shop/${id}`} className='link'>
                 <div className='card-product__wrapper'>
                     <LazyImage
-                        src={Image}
+                        src={`/${Image}`}
                         alt='product-card'
                         height='100%'
                         className=''

@@ -16,7 +16,7 @@ const Footer = () => (
                             key={id}
                         >
                             <LazyImage
-                                src={process.env.PUBLIC_URL + `./assets/${src}`}
+                                src={`/${process.env.PUBLIC_URL}./assets/${src}`}
                                 alt='social-media-icon'
                                 height='35px'
                                 width='35px'

@@ -1,6 +1,6 @@
 import React from 'react';
-import Routess from './routes/routes';
+import Routes from './routes/routes';
 
-const App = () => <Routess/>
+const App = () => <Routes/>
 
 export default App;

@@ -17,28 +17,12 @@ const Shop = () => {
         const results = ITEMS.filter(({ title }) => (
             title.toLowerCase().includes(searchTerm.toLowerCase())
         ));
-        setSearchResults(results)
+        setSearchResults(results);
     }, [searchTerm])
 
-    const resultAtoZ = () => {
-        const resultsAZ = ITEMS.sort((a, b) => a.title.localeCompare(b.title));
-        setSearchResults([...resultsAZ]);
-    }
-    const resultZtoA = () => {
-        const resultsZA = ITEMS.sort((a, b) => b.title.localeCompare(a.title));
-        setSearchResults([...resultsZA]);
-    }
-    const resultLowToHigh = () => {
-        const resultsLtH = ITEMS.sort((a, b) => a.price - b.price);
-        setSearchResults([...resultsLtH]);
-    }
-    const resultHighToLow = () => {
-        const resultsHtL = ITEMS.sort((a, b) => b.price - a.price);
-        setSearchResults([...resultsHtL]);
-    }
-    const resultNewest = () => {
-        const resultsNewest = ITEMS.sort((a, b) => a.id - b.id + 1);
-        setSearchResults([...resultsNewest]);
+    const resultTo = (expression) => {
+        const expressionResult = expression;
+        setSearchResults([...expressionResult]);
     }
     const handleSearchByName = (event) => setSearchTerm(event.target.value);
 
@@ -55,14 +39,13 @@ const Shop = () => {
                             value={searchTerm}
                             handleChange={handleSearchByName}
                         />
-                        {/* <button onClick={resultNewest}>new</button> */}
                         <Sort
                             className='settings-right__sort'
-                            AtoZ={resultAtoZ}
-                            ZtoA={resultZtoA}
-                            HightToLow={resultHighToLow}
-                            LowToHigh={resultLowToHigh}
-                            Newest={resultNewest}
+                            AtoZ={() => resultTo(ITEMS.sort((a, b) => a.title.localeCompare(b.title)))}
+                            ZtoA={() => resultTo(ITEMS.sort((a, b) => b.title.localeCompare(a.title)))}
+                            HightToLow={() => resultTo(ITEMS.sort((a, b) => b.price - a.price))}
+                            LowToHigh={() => resultTo(ITEMS.sort((a, b) => a.price - b.price))}
+                            Newest={() => resultTo(ITEMS.sort((a, b) => a.id - b.id))}
                             setSearchResults={setSearchResults}
                         />
                     </div>

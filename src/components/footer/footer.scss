@@ -50,6 +50,7 @@ $invert-after: 90%;
             & input,
             & button {
                 margin: 5px 0;
+                padding: 8px 25px;
             }
 
             & button {
@@ -63,7 +64,6 @@ $invert-after: 90%;
                 }
             }
             & input {
-                padding: 8px 25px;
                 background-color: #535151;
                 border: none;
                 color: #ffffff;

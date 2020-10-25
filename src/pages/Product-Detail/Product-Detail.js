@@ -1,29 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ITEMS from '../../context/products.json'
+import LazyImage from '../../lazy-image'
 
-const ProductDetail = ({match}) => {
-    const ID = match.params.id - 1;
-    const product = ITEMS[ID];
-    if(!product) return <div>We don't have that products, check url</div>
+const ProductDetail = ({ match }) => {
 
-    const { id, title, price, description, category } = product;
+    const [item, setItem] = useState({});
+    const { id, title, price, description, category } = item;
+
+    useEffect(() => {
+        ITEMS.filter(item => parseInt(match.params.id) === item.id && setItem(item));
+    })
+    if (match.params.id >= ITEMS.length + 1) return <div style={{minHeight: '80vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>We don't have that products, check url</div>
 
     const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.png`
 
     return (
         <div>
-            <p>{ id }</p>
-            <img 
+            <LazyImage
                 src={Image}
                 alt='product-card'
-                height='100%'
-                className='lazy'
+                className=''
             />
-            <p>{ title }</p>
-            <p>{ price }</p>
-            <p>{ description }</p>
-            <p>{ category }</p>
+            <p>{title}</p>
+            <p>{price}</p>
+            <p>{description}</p>
+            <p>{category}</p>
         </div>
     )
 }

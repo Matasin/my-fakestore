@@ -33,14 +33,14 @@ const Filters = ({ className }) => {
             label: 'Colors',
             name: isOpen.colors,
             setting: { colors: !isOpen.colors },
-            content: 'colors',
+            content: 'colors'
         },
         {
             id: 3,
             label: 'Size',
             name: isOpen.size,
             setting: { size: !isOpen.size },
-            content: 'size',
+            content: 'size'
         },
     ];
 
@@ -61,7 +61,7 @@ const Filters = ({ className }) => {
                             <div className={`filters__content ${name ? 'filters__content--active' : ''}`}>{content}</div>
                         </li>
                     )
-                })};
+                })}
             </ul>
         </div>
     )

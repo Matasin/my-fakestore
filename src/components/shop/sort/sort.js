@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './sort.scss'
+import OutsideAction from '../../../helpers/outside-action'
 
 const Sort = ({ className, AtoZ, ZtoA, HightToLow, LowToHigh, setSearchResults, Newest }) => {
 
@@ -49,10 +50,10 @@ const Sort = ({ className, AtoZ, ZtoA, HightToLow, LowToHigh, setSearchResults, 
                 {label}
                 <span className={`chevron ${isOpen ? 'top' : 'bottom'}`}></span>
             </button>
-            {
-                isOpen ?
+            {isOpen ?
+                <OutsideAction action={() => setIsOpen(!isOpen)}>
                     <ul className='sort__list'>
-                        {sortOptions.map(({id, label, setting}) => {
+                        {sortOptions.map(({ id, label, setting }) => {
                             return (
                                 <li
                                     key={id}
@@ -63,7 +64,8 @@ const Sort = ({ className, AtoZ, ZtoA, HightToLow, LowToHigh, setSearchResults, 
                             )
                         })}
                     </ul>
-                    : null
+                </OutsideAction>
+                : null
             }
         </div>
 

@@ -8,6 +8,7 @@ const Filters = ({ className }) => {
         colors: false,
         size: false,
     });
+    const { price, colors, size } = isOpen;
 
     // const handleSetIsOpen = (label, setting) => {
     //     // setLabel(label);
@@ -19,50 +20,50 @@ const Filters = ({ className }) => {
         {
             id: 1,
             label: 'Price',
-            name: isOpen.price,
+            name: price,
             setting: { price: !isOpen.price },
-            content: <input
-                    type='range'
-                    min={0}
-                    max={1000}
-                    step={2}
-                />
+            // content: <input
+            //     type='range'
+            //     min={0}
+            //     max={1000}
+            //     step={2}
+            // />
+            content: 'price'
         },
         {
             id: 2,
             label: 'Colors',
-            name: isOpen.colors,
+            name: colors,
             setting: { colors: !isOpen.colors },
             content: 'colors'
         },
         {
             id: 3,
             label: 'Size',
-            name: isOpen.size,
+            name: size,
             setting: { size: !isOpen.size },
             content: 'size'
         },
     ];
 
-
     return (
         <div className={`filters ${className}`}>
             <div className='filters__header'>Filter by</div>
-            <ul className='filters__list'>
-                {filterOptions.map(({ id, label, name, setting, content }) => {
-                    return (
-                        <li key={id}>
-                            <button
-                                className={`filters__btn ${isOpen ? '' : 'filters__btn--active'}`}
-                                onClick={() => setIsOpen(setting)}
-                            >
-                                {label}
-                            </button>
-                            <div className={`filters__content ${name ? 'filters__content--active' : ''}`}>{content}</div>
-                        </li>
-                    )
-                })}
-            </ul>
+                <ul className='filters__list'>
+                    {filterOptions.map(({ id, label, name, setting, content }) => {
+                        return (
+                            <li key={id}>
+                                <button
+                                    className={`filters__btn ${name ? 'filters__btn--active' : ''}`}
+                                    onClick={() => setIsOpen(setting)}
+                                >
+                                    {label}
+                                </button>
+                                <div className={`filters__content ${name ? 'filters__content--active' : ''}`}>{content}</div>
+                            </li>
+                        )
+                    })}
+                </ul>
         </div>
     )
 }

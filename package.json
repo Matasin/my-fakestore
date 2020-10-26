@@ -1,7 +1,7 @@
 {
   "name": "fake-store",
   "version": "0.1.0",
-  "homepage": "https://matasin.github.io/second-fake-store",
+  "homepage": "https://matasin.github.io/second-fake-store/",
   "engines": {
     "node": "12.x"
   },

@@ -1,20 +1,20 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Loader from '../components/Loader/Loader'
+import Loader from '../components/loader/Loader'
 
-const Nav = lazy(() => import('../components/nav/nav'));
+const Nav = lazy(() => import('../components/nav/Nav'));
 // const CrumbsBread = lazy(() => import('../components/crumbs-bread/crumbs-bread'));
 
-const Cart = lazy(() => import('../pages/cart/cart'));
-const Home = lazy(() => import('../pages/home/home'));
-const Login = lazy(() => import('../pages/login/login'));
-const ProductDetail = lazy(() => import('../pages/product-detail/product-detail'));
-const Shop = lazy(() => import('../pages/shop/shop'));
-const Profile = lazy(() => import('../pages/profile/profile'));
+const Cart = lazy(() => import('../pages/cart/Cart'));
+const Home = lazy(() => import('../pages/home/Home'));
+const Login = lazy(() => import('../pages/login/Login'));
+const ProductDetail = lazy(() => import('../pages/product-detail/Product-Detail'));
+const Shop = lazy(() => import('../pages/shop/Shop'));
+const Profile = lazy(() => import('../pages/profile/Profile'));
 
-const Footer = lazy(() => import('../components/footer/footer'));
+const Footer = lazy(() => import('../components/footer/Footer'));
 
-const Page404 = lazy(() => import('../pages/page404/page404'));
+const Page404 = lazy(() => import('../pages/page404/Page404'));
 
 const Routes = () => (
     <Router>

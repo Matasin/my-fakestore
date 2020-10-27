@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './filters.scss'
+import './Filters.scss'
 
 const Filters = ({ className }) => {
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import './home.scss'
+import './Home.scss'
 
 import { Link } from "react-router-dom";
 import ITEMS from '../../context/products.json'
-import CardProduct from '../../components/card-product/card-product'
+import CardProduct from '../../components/card-product/Card-Product'
 
 const Home = () => (
     <>

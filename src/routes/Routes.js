@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Loader from '../components/loader/loader'
+import Loader from '../components/loader/Loader'
 
 const Nav = lazy(() => import('../components/nav/nav'));
 // const CrumbsBread = lazy(() => import('../components/crumbs-bread/crumbs-bread'));

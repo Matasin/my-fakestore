@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card-Product.scss'
+import './card-product.scss'
 
 import { Link } from 'react-router-dom'
 import LazyImage from '../../lazy-image'

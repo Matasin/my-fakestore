@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './Shop.scss'
+import './shop.scss'
 
 import ITEMS from '../../context/products.json'
-import Filters from '../../components/shop/filters/Filters'
-import Sort from '../../components/shop/sort/Sort'
-import Search from '../../components/shop/search/Search'
-import CardProduct from '../../components/card-product/Card-Product'
+import Filters from '../../components/shop/filters/filters'
+import Sort from '../../components/shop/sort/sort'
+import Search from '../../components/shop/search/search'
+import CardProduct from '../../components/card-product/card-product'
 
 
 const Shop = () => {

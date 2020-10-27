@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Sort.scss'
+import './sort.scss'
 import OutsideAction from '../../../helpers/outside-action'
 
 const Sort = ({ className, AtoZ, ZtoA, HightToLow, LowToHigh, setSearchResults, Newest }) => {

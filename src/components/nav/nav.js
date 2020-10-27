@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Nav.scss'
+import './nav.scss'
 
 import { NavLink, Link } from 'react-router-dom'
 import { NAVBAR_ITEMS } from '../../constants/constants'

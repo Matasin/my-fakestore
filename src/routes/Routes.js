@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Loader from '../components/loader/Loader'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const Nav = lazy(() => import('../components/nav/Nav'));
 // const CrumbsBread = lazy(() => import('../components/crumbs-bread/crumbs-bread'));
@@ -22,7 +22,6 @@ const Routes = () => (
             fallback={<Loader />}
         >
             <Nav/>
-            {/* <CrumbsBread/> */}
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/cart' component={Cart} />

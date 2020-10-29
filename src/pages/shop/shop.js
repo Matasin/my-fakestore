@@ -59,7 +59,7 @@ const Shop = () => {
                                     key={id}
                                     id={id}
                                     title={title}
-                                    price={price}
+                                    price={`$${price}`}
                                     descritpion={descritpion}
                                     category={category}
                                     className='shop__card'

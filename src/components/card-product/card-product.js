@@ -23,7 +23,7 @@ const CardProduct = ({ id, title, price, btnText, className }) => {
                 </div>
                 <div className='card-product__label'>
                     <h3>{title}</h3>
-                    <p>${price}</p>
+                    <p>{price}</p>
                 </div>
             </Link>
         </div>

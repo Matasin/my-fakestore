@@ -20,46 +20,52 @@ const Shop = () => {
         setSearchResults(results);
     }, [searchTerm])
 
+    const handleSearchByName = (event) => setSearchTerm(event.target.value);
     const resultTo = (expression) => {
         const expressionResult = expression;
         setSearchResults([...expressionResult]);
-    }
-    const handleSearchByName = (event) => setSearchTerm(event.target.value);
-    
+    };
+    const minPrice = (e) => resultTo(ITEMS.filter(a => a.price > e.target.value));
+    const maxPrice = (e) => resultTo(ITEMS.filter(a => a.price < e.target.value));
+
     const optionsToSet = [
         {
             id: 1,
             label: 'Newest',
-            setting: () => resultTo(searchResults.sort((a, b) => a.title.localeCompare(b.title)))
+            setting: () => resultTo(ITEMS.sort((a, b) => a.id - b.id))
         },
         {
             id: 2,
             label: 'Price (high to low)',
-            setting: () => resultTo(searchResults.sort((a, b) => b.title.localeCompare(a.title)))
+            setting: () => resultTo(ITEMS.sort((a, b) => b.price - a.price))
         },
         {
             id: 3,
             label: 'Price (low to high)',
-            setting: () => resultTo(searchResults.sort((a, b) => b.price - a.price))
+            setting: () => resultTo(ITEMS.sort((a, b) => a.price - b.price))
         },
         {
             id: 4,
             label: 'Name A-Z',
-            setting: () => resultTo(searchResults.sort((a, b) => a.price - b.price))
+            setting: () => resultTo(ITEMS.sort((a, b) => a.title.localeCompare(b.title)))
         },
         {
             id: 5,
             label: 'Name Z-A',
-            setting: () => resultTo(searchResults.sort((a, b) => a.id - b.id))
+            setting: () => resultTo(ITEMS.sort((a, b) => b.title.localeCompare(a.title)))
         },
     ];
 
     return (
         <div className='shop'>
             <header className='shop__header'>Shop</header>
-
             <div className='shop__content-c'>
-                <Filters className='shop__filters' />
+                <Filters 
+                    className='shop__filters'
+                    setAction={setSearchResults}
+                    minPrice={minPrice}
+                    maxPrice={maxPrice}
+                />
                 <div className='shop__products'>
                     <div className='settings-right'>
                         <Search
@@ -76,7 +82,9 @@ const Shop = () => {
                     </div>
 
                     {searchResults.length === 0 ?
-                        <h5 style={{ width: '100%', textAlign: 'center' }}>Couldn't find this item</h5>
+                        <h4 style={{ width: '100%', textAlign: 'center' ,fontWeight: '500'}}>
+                            Are you sure looking for <b>{searchTerm}</b>? Seems like bad term.
+                        </h4>
                         :
                         searchResults.map(({ id, title, price, descritpion, category }) => {
                             return (

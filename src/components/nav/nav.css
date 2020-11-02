@@ -110,11 +110,11 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 0 15px;
-    z-index: 2;
+    z-index: 3;
   }
   .nav__hamburger {
     display: block;
-    z-index: 2;
+    z-index: 3;
   }
   .nav__c-items {
     position: fixed;

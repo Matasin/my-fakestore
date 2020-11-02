@@ -136,8 +136,12 @@
   .shop__products {
     width: 100%;
   }
-  .shop__filters {
-    display: none;
+  .shop__filters .filters__header {
+    padding-left: 15px;
+  }
+  .shop__filters .acordion .acordion__btn {
+    padding-left: 15px;
+    height: 50px;
   }
   .settings-right {
     -webkit-box-orient: horizontal;

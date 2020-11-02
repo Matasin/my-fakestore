@@ -7,7 +7,28 @@ html, body {
 $event-color: #303132;
 $font-color: #d3d3d3;
 
+$border-thin: thin solid rgb(192, 192, 192);
+
 $basic-transition: 0.35s ease;
+
+// scrollbar
+// width
+::-webkit-scrollbar {
+    width: 15px;
+}
+// Track
+::-webkit-scrollbar-track {
+    background: #E6E6E6;
+}
+// Handle
+::-webkit-scrollbar-thumb {
+    background:#7e7777;
+}
+// Handle on hover
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(141, 140, 140);
+}
+// scrollbar
 
 .btn-primary {
     background-color: $event-color;
@@ -82,5 +103,14 @@ $basic-transition: 0.35s ease;
         left: 0.25em;
         transform: rotate(-135deg);
     }
+}
+
+input[type=number] {
+    height: 30px;
+    margin: 3px 0;
+    border: $border-thin;
+    outline: none;
+    font-family: "Raleway", sans-serif;
+    padding-left: 10px;
 }
 // arrows

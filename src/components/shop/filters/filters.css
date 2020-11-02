@@ -32,4 +32,78 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.filters__inputs input {
+  width: calc(95% - 25px);
+}
+
+.filters__inputs span {
+  margin-left: 5px;
+}
+
+.filters__button {
+  display: none;
+  position: fixed;
+  width: 125px;
+  border-radius: 2px;
+  height: 45px;
+  right: 3vw;
+  bottom: 2vh;
+  z-index: 2;
+}
+
+.filters__button::before {
+  -webkit-transition: color .1s ease;
+  transition: color .1s ease;
+  content: "apply";
+  position: absolute;
+  color: transparent;
+  left: 0;
+  right: 0;
+}
+
+.filters__button:hover {
+  background-color: #303132;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  .filters {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 80px;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 2;
+    -webkit-transform: translateX(30%);
+            transform: translateX(30%);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .filters__button {
+    display: block;
+  }
+}
+
+.filters--active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  visibility: visible;
+  opacity: 1;
+}
+
+.filters__button--active {
+  color: transparent;
+}
+
+.filters__button--active::before {
+  color: #ffffff;
+}
+
+.filters__button--active:hover {
+  color: transparent;
+}
 /*# sourceMappingURL=filters.css.map */

@@ -74,7 +74,7 @@
 }
 
 .acordion--active .acordion__btn {
-  background-color: #faf9f9;
+  background-color: #f1eeee;
 }
 
 .acordion--active .acordion__btn::after {

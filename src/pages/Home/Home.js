@@ -1,5 +1,5 @@
 import React from 'react';
-import './home.scss'
+import './home.css'
 
 import { Link } from "react-router-dom";
 import ITEMS from '../../context/products.json'

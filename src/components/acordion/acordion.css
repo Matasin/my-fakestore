@@ -1,0 +1,87 @@
+.acordion {
+  -webkit-box-shadow: 0px 1px 1px -1px #303132;
+          box-shadow: 0px 1px 1px -1px #303132;
+  padding: 15px 0px;
+}
+
+.acordion__btn, .acordion__content {
+  color: #303132;
+}
+
+.acordion__btn {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  padding: 10px 25px 10px 0px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.acordion__btn::before, .acordion__btn::after {
+  position: absolute;
+  right: 15px;
+  content: "";
+  height: 11px;
+  width: 1px;
+  background-color: #303132;
+  -webkit-transition: all 0.3s ease-in-out/20%;
+  transition: all 0.3s ease-in-out/20%;
+}
+
+.acordion__btn::before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.acordion__btn::after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.acordion__btn:focus {
+  outline: none;
+}
+
+.acordion__btn:hover {
+  opacity: 0.5;
+}
+
+.acordion__content {
+  font-size: 13px;
+  line-height: 18px;
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.acordion--active .acordion__btn {
+  background-color: #faf9f9;
+}
+
+.acordion--active .acordion__btn::after {
+  opacity: 0;
+}
+
+.acordion--active .acordion__content {
+  max-height: 300px;
+}
+/*# sourceMappingURL=acordion.css.map */

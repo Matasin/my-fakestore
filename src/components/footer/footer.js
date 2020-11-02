@@ -1,5 +1,5 @@
 import React from 'react';
-import './footer.scss'
+import './footer.css'
 
 import { SOCIAL_MEDIA } from '../../constants/constants'
 import LazyImage from '../../lazy-image'

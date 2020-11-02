@@ -1,7 +1,7 @@
 import React from 'react';
-import './product-image-preview.scss'
+import './product-image-preview.css'
 
-import CardProduct from '../../components/card-product/card-product'
+import CardProduct from '../../card-product/card-product'
 
 const ProductImagePreview = ({ id, summary }) => {
     return (
@@ -9,6 +9,7 @@ const ProductImagePreview = ({ id, summary }) => {
             <CardProduct
                 id={id}
                 className=''
+                disableLink={true}
             />
             <p
                 className='product-image-preview__summary'

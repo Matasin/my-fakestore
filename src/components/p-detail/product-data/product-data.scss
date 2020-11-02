@@ -1,0 +1,49 @@
+.product-data {
+    color: #303132;
+
+    &__header {
+        font-weight: 400;
+        margin-top: 0;
+    }
+
+    &__price {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    &__sort {
+        margin: 30px 0;
+        & .sort__btn {
+            border-color: rgb(192, 192, 192);
+        }
+        & .sort__list {
+            width: 100%;
+            box-shadow: rgb(192, 192, 192);;
+        }
+    }
+
+    & .btn-primary {
+        width: 100%;
+        margin: 5px auto;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__btn-add {
+        height: 45px;
+        color: #303132;
+        border: 1px solid #303132;
+        background-color: transparent;
+        &:hover {
+            color: #303132;
+            background-color: #f1f1f1;
+        }
+    }
+    &__btn-buy {
+        height: 40px;
+        &:hover {
+            background-color: #303132;
+            color: #ffffff;
+        }
+    }
+}

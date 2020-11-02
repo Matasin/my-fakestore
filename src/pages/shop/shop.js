@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './shop.scss'
+import './shop.css'
 
 import ITEMS from '../../context/products.json'
 import Filters from '../../components/shop/filters/filters'
-import Sort from '../../components/shop/sort/sort'
+import Sort from '../../components/sort/sort'
 import Search from '../../components/shop/search/search'
 import CardProduct from '../../components/card-product/card-product'
 
@@ -25,6 +25,34 @@ const Shop = () => {
         setSearchResults([...expressionResult]);
     }
     const handleSearchByName = (event) => setSearchTerm(event.target.value);
+    
+    const optionsToSet = [
+        {
+            id: 1,
+            label: 'Newest',
+            setting: () => resultTo(searchResults.sort((a, b) => a.title.localeCompare(b.title)))
+        },
+        {
+            id: 2,
+            label: 'Price (high to low)',
+            setting: () => resultTo(searchResults.sort((a, b) => b.title.localeCompare(a.title)))
+        },
+        {
+            id: 3,
+            label: 'Price (low to high)',
+            setting: () => resultTo(searchResults.sort((a, b) => b.price - a.price))
+        },
+        {
+            id: 4,
+            label: 'Name A-Z',
+            setting: () => resultTo(searchResults.sort((a, b) => a.price - b.price))
+        },
+        {
+            id: 5,
+            label: 'Name Z-A',
+            setting: () => resultTo(searchResults.sort((a, b) => a.id - b.id))
+        },
+    ];
 
     return (
         <div className='shop'>
@@ -41,12 +69,9 @@ const Shop = () => {
                         />
                         <Sort
                             className='settings-right__sort'
-                            AtoZ={() => resultTo(ITEMS.sort((a, b) => a.title.localeCompare(b.title)))}
-                            ZtoA={() => resultTo(ITEMS.sort((a, b) => b.title.localeCompare(a.title)))}
-                            HightToLow={() => resultTo(ITEMS.sort((a, b) => b.price - a.price))}
-                            LowToHigh={() => resultTo(ITEMS.sort((a, b) => a.price - b.price))}
-                            Newest={() => resultTo(ITEMS.sort((a, b) => a.id - b.id))}
-                            setSearchResults={setSearchResults}
+                            firstLabel='sort by'
+                            options={optionsToSet}
+                            setAction={setSearchResults}
                         />
                     </div>
 

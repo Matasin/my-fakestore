@@ -1,0 +1,29 @@
+.product-image-preview {
+    & .card-product {
+        width: 100%;
+    }
+    & .card-product__wrapper {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+            max-height: 90%;
+            max-width: inherit;
+            height: auto;
+        }
+        & .btn-primary {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__summary {
+        margin-top: 30px;
+        font-size: 15px;
+        color: #303132;
+    }
+
+    
+}

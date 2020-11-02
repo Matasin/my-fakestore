@@ -1,5 +1,5 @@
 import React from 'react';
-import './search.scss'
+import './search.css'
 
 const Search = ({ className, value, handleChange }) => {
     return (

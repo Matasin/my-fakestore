@@ -116,6 +116,13 @@
         &__content-c {
             margin-top: 40px;
         }
+
+        & .card-product {
+            & .card-product__wrapper img {
+                max-height: 300px;
+            }
+        }
+
         &__products {
             width: 100%;
         }
@@ -136,6 +143,14 @@
     }
 }
 @media only screen and (max-width: 545px) {
+    .shop {
+        & .card-product {
+            width: 100%;
+            & .card-product__wrapper img {
+                max-height: 300px;
+            }
+        }
+    }
     .settings-right {
         flex-direction: column;
 

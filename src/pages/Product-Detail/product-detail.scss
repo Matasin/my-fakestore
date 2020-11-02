@@ -1,5 +1,5 @@
 .product-detail {
-    width: 60%;
+    width: 900px;
     margin: 90px auto;
 
     &__btn {
@@ -8,8 +8,53 @@
     }
 
     &__c-data {
-        margin: 30px 0;
+        margin: 30px auto;
         width: 100%;
         display: flex;
+
+        & .product-data {
+            padding-left: 30px;
+            // in summary product is the same value of margin
+        }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .product-detail {
+        width: 750px;
+        & .product-image-preview .card-product__wrapper {
+            width: 400px;
+            height: 400px;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .product-detail {
+        width: 100%;
+        margin: 35px auto;
+        &__btn {
+            margin-left: 5px;
+        }
+
+        & .product-image-preview .card-product__wrapper {
+            width: 450px;
+            height: 450px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        &__c-data {
+            flex-wrap: wrap;
+            & .product-image-preview,
+            & .product-data {
+                width: 100%;
+            }
+
+            & .product-image-preview__summary,
+            & .product-data {
+                padding: 0 15px;
+            }
+        }
     }
 }

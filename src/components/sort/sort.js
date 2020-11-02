@@ -1,44 +1,16 @@
 import React, { useState } from 'react';
-import './sort.scss'
-import OutsideAction from '../../../helpers/outside-action'
+import './sort.css'
+import OutsideAction from '../../helpers/outside-action'
 
-const Sort = ({ className, AtoZ, ZtoA, HightToLow, LowToHigh, setSearchResults, Newest }) => {
+const Sort = ({ className, firstLabel, options, setAction }) => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [label, setLabel] = useState('sort by');
-
-    const sortOptions = [
-        {
-            id: 1,
-            label: 'Newest',
-            setting: Newest
-        },
-        {
-            id: 2,
-            label: 'Price (high to low)',
-            setting: HightToLow
-        },
-        {
-            id: 3,
-            label: 'Price (low to high)',
-            setting: LowToHigh
-        },
-        {
-            id: 4,
-            label: 'Name A-Z',
-            setting: AtoZ
-        },
-        {
-            id: 5,
-            label: 'Name Z-A',
-            setting: ZtoA
-        },
-    ];
+    const [label, setLabel] = useState(firstLabel);
 
     const handleSet = (label, setting) => {
-        setLabel(label);
         setIsOpen(!isOpen);
-        setSearchResults(setting);
+        setLabel(label);
+        setAction(setting);
     }
 
     return (
@@ -53,7 +25,7 @@ const Sort = ({ className, AtoZ, ZtoA, HightToLow, LowToHigh, setSearchResults, 
             {isOpen ?
                 <OutsideAction action={() => setIsOpen(!isOpen)}>
                     <ul className='sort__list'>
-                        {sortOptions.map(({ id, label, setting }) => {
+                        {options.map(({ id, label, setting }) => {
                             return (
                                 <li
                                     key={id}

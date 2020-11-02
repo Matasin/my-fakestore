@@ -1,68 +1,32 @@
-$transition: .2s ease-out;
+$transition: 0.2s ease-out;
 $contentHeight: 60px;
 
 .filters {
     color: #303132;
 
-    &__header, li {
-        padding: 20px 0;
-        border-bottom: thin solid rgba(48, 49, 50, 0.2);
-    }
-
     &__header {
         font-size: 26px;
         font-weight: 400;
         width: 100%;
+        padding: 20px 0;
+        box-shadow: 0px 1px 1px -1px #303132;
     }
 
     &__list {
         margin: 0;
         padding: 0;
+    }
 
-        & li {
-            list-style: none;
+    &__acordion {
+        & .acordion__btn {
+            text-transform: capitalize;
+        }
+        & .acordion__content {
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 
-    &__btn {
-        color: #303132;
-        padding: 10px 0;
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        position: relative;
-        cursor: pointer;
-        font-size: 16px;
-        text-align: left;
-        transition: all $transition;
-
-
-        &::after {
-            position: absolute;
-            right: 5%;
-            content: '\002B';
-            transform: scale(1.2);
-        }
-        &:focus {
-            outline: none;
-        }
-    }
-    &__btn--active::after {
-        content: '\2212';
-    }
-
-    &__content {
-        height: $contentHeight;
-        max-height: 0;
-        overflow: hidden;
-        transition: all $transition;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    &__content--active {
-        max-height: $contentHeight;
-    }
 }

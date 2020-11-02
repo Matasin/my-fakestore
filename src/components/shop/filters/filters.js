@@ -1,69 +1,43 @@
-import React, { useState } from 'react';
-import './filters.scss'
+import React from 'react';
+import './filters.css'
+
+import Acordion from '../../acordion/acordion'
 
 const Filters = ({ className }) => {
-
-    const [isOpen, setIsOpen] = useState({
-        price: false,
-        colors: false,
-        size: false,
-    });
-    const { price, colors, size } = isOpen;
-
-    // const handleSetIsOpen = (label, setting) => {
-    //     // setLabel(label);
-    //     setIsOpen(!isOpen);
-    //     // setSearchResults(setting);
-    // }
 
     const filterOptions = [
         {
             id: 1,
             label: 'Price',
-            name: price,
-            setting: { price: !isOpen.price },
-            // content: <input
-            //     type='range'
-            //     min={0}
-            //     max={1000}
-            //     step={2}
-            // />
-            content: 'price'
+            content: 'there will be slider with price'
         },
         {
             id: 2,
             label: 'Colors',
-            name: colors,
-            setting: { colors: !isOpen.colors },
-            content: 'colors'
+            content: 'there will be circle of colors you can select'
         },
         {
             id: 3,
             label: 'Size',
-            name: size,
-            setting: { size: !isOpen.size },
-            content: 'size'
+            content: 'there will be sizes'
         },
     ];
 
     return (
         <div className={`filters ${className}`}>
             <div className='filters__header'>Filter by</div>
-                <ul className='filters__list'>
-                    {filterOptions.map(({ id, label, name, setting, content }) => {
-                        return (
-                            <li key={id}>
-                                <button
-                                    className={`filters__btn ${name ? 'filters__btn--active' : ''}`}
-                                    onClick={() => setIsOpen(setting)}
-                                >
-                                    {label}
-                                </button>
-                                <div className={`filters__content ${name ? 'filters__content--active' : ''}`}>{content}</div>
-                            </li>
-                        )
-                    })}
-                </ul>
+            <ul className='filters__list'>
+                {filterOptions.map(({ id, label, content }) => {
+                    return (
+                        <Acordion
+                            key={id}
+                            label={label}
+                            content={content}
+                            className='filters__acordion'
+                        />
+                    )
+                })}
+            </ul>
         </div>
     )
 }

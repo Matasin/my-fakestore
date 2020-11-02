@@ -1,0 +1,134 @@
+.footer {
+  background-color: #303132;
+  color: #d3d3d3;
+  padding: 0 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.footer__social-media, .footer__newsletter, .footer__assistance {
+  width: 30%;
+  text-align: center;
+}
+
+.footer__info-block {
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 20px 0;
+}
+
+.footer__social-media img {
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.footer__social-media img:hover {
+  background-color: gray;
+}
+
+.footer__newsletter form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__newsletter form input,
+.footer__newsletter form button {
+  margin: 5px 0;
+  padding: 8px 25px;
+}
+
+.footer__newsletter form button {
+  font-size: 13px;
+  color: #303132;
+  background-color: #d3d3d3;
+}
+
+.footer__newsletter form button:hover {
+  background-color: #ffffff;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.footer__newsletter form input {
+  background-color: #535151;
+  border: none;
+  color: #ffffff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.footer__newsletter form input:hover, .footer__newsletter form input:focus {
+  background-color: #777777;
+  outline: none;
+}
+
+.footer__newsletter form input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.footer__newsletter form input:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.footer__newsletter form input::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.footer__newsletter form input::placeholder {
+  color: #ffffff;
+}
+
+.footer__copy-right {
+  margin: 0;
+  text-align: center;
+  background-color: #303132;
+  color: #d3d3d3;
+  padding: 50px 0;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .footer {
+    padding: 0 50px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .footer {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer div {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    margin: 0 10%;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

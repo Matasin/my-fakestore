@@ -1,0 +1,35 @@
+.search__input {
+  outline: none;
+  border: 1px solid #330011;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.search__input:focus {
+  background-color: #F3F3F3;
+}
+
+.search__input::-webkit-input-placeholder {
+  color: #303132;
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+.search__input:-ms-input-placeholder {
+  color: #303132;
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+.search__input::-ms-input-placeholder {
+  color: #303132;
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+.search__input::placeholder {
+  color: #303132;
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+}
+/*# sourceMappingURL=search.css.map */

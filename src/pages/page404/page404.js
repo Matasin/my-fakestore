@@ -1,5 +1,5 @@
 import React from 'react'
-import './page404.scss';
+import './page404.css';
 
 import { Link, useHistory } from 'react-router-dom'
 

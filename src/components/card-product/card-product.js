@@ -1,15 +1,19 @@
 import React from 'react';
-import './card-product.scss'
+import './card-product.css'
 
 import { Link } from 'react-router-dom'
 import LazyImage from '../../lazy-image'
 
-const CardProduct = ({ id, title, price, btnText, className }) => {
+const CardProduct = ({ id, title, price, btnText, className , disableLink}) => {
     const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.png`
 
     return (
         <div className={`${className} card-product`}>
-            <Link to={`shop/${id}`} className='link'>
+            <Link 
+                to={`shop/${id}`} 
+                className='link'
+                onClick={(e) => disableLink && e.preventDefault()}
+            >
                 <div className='card-product__wrapper'>
                     <LazyImage
                         src={`/${Image}`}

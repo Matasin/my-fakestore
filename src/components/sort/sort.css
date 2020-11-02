@@ -1,0 +1,47 @@
+.sort {
+  position: relative;
+  z-index: 1;
+}
+
+.sort__btn {
+  position: relative;
+  background-color: transparent;
+  border: thin solid #330011;
+  padding: 10px 15px;
+  text-align: left;
+  width: 200px;
+  color: #303132;
+  font-size: 15px;
+}
+
+.sort__btn .chevron {
+  right: 15px;
+}
+
+.sort__btn:hover {
+  color: #330011;
+}
+
+.sort__list {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  padding: 15px 0;
+  margin: 0;
+  background-color: #ffffff;
+  -webkit-box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.51);
+          box-shadow: 1px 1px 4px -1px rgba(0, 0, 0, 0.51);
+}
+
+.sort__list li {
+  list-style: none;
+  color: #303132;
+  text-align: left;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.sort__list li:hover {
+  background-color: #F3F3F3;
+}
+/*# sourceMappingURL=sort.css.map */

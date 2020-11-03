@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import LazyImage from '../../lazy-image'
 
 const CardProduct = ({ id, title, price, btnText, className , disableLink}) => {
-    const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.png`
+    const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.jpeg`
 
     return (
         <div className={`${className} card-product`}>

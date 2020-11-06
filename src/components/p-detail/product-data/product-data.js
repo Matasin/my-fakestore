@@ -6,7 +6,7 @@ import Sort from '../../sort/sort'
 
 const returnPolicyFormula = "I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase.Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence."
 
-const ProductData = ({ title, price, description }) => {
+const ProductData = ({ title, price, description, addToCart }) => {
     const optionsToSet = [
         {
             id: 1,
@@ -33,7 +33,7 @@ const ProductData = ({ title, price, description }) => {
                 setAction={() => console.log('Not yet')} 
             />
 
-            <button className='btn-primary product-data__btn-add'>add to cart</button>
+            <button className='btn-primary product-data__btn-add' onClick={addToCart}>add to cart</button>
             <button className='btn-primary product-data__btn-buy'>buy now</button>
 
             <Acordion

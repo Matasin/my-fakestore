@@ -1,0 +1,98 @@
+.btn-primary {
+    background-color: $event-color;
+    color: #ffffff;
+    transition: all $basic-transition;
+    font-size: 18px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border: none;
+    font-family: $font-stack;
+
+    &:hover {
+        background-color: #ffffff;
+        color: $event-color;
+        box-shadow: 1px 3px 7px 1px rgba(255, 255, 255, 0.57);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.link {
+    text-decoration: none;
+}
+
+// styling lazy loading
+.lazy {
+    opacity: 0;
+    transform: translateY(-10px);
+    transform: scale(0.98);
+    transition: all .45s ease;
+
+    &:nth-child(odd) {
+        transition: all .45s, .65s ease;
+    }
+}
+.loaded {
+    opacity: 1;
+    transform: translateY(0px);
+    transform: scale(1);
+}
+// styling lazy loading
+// arrows
+.chevron {
+    position: absolute;
+    &::before {
+        border-style: solid;
+        border-width: thin thin 0 0;
+        border-color: #303132;
+        content: "";
+        display: inline-block;
+        height: 0.45em;
+        left: 0.15em;
+        position: relative;
+        top: 0.15em;
+        transform: rotate(-45deg);
+        vertical-align: top;
+        width: 0.45em;
+    }
+    &.top::before {
+        top: 6px;
+    }
+    &.right::before {
+        left: 0;
+        transform: rotate(45deg);
+    }
+    &.bottom::before {
+        top: 2px;
+        transform: rotate(135deg);
+    }
+    &.left::before {
+        left: 0.25em;
+        transform: rotate(-135deg);
+    }
+}
+// arrows
+
+input[type=number] {
+    height: 30px;
+    margin: 3px 0;
+    border: $border-thin;
+    outline: none;
+    font-family: "Raleway", sans-serif;
+    padding-left: 10px;
+}
+
+// scrollbar
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background: #E6E6E6;
+}
+::-webkit-scrollbar-thumb {
+    background:#7e7777;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(141, 140, 140);
+}
+// scrollbar

@@ -33,23 +33,14 @@ html, body {
 
 .lazy {
   opacity: 0;
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-  -webkit-transition: all .45s ease;
-  transition: all .45s ease;
-}
-
-.lazy:nth-child(odd) {
-  -webkit-transition: all .45s, .65s ease;
-  transition: all .45s, .65s ease;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 .loaded {
   opacity: 1;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
   -webkit-transform: scale(1);
           transform: scale(1);
 }

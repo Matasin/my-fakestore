@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './shop.css'
+import { Helmet } from 'react-helmet';
 
-import ITEMS from '../../context/products.json'
-import Filters from '../../components/shop/filters/filters'
-import Sort from '../../components/sort/sort'
-import Search from '../../components/shop/search/search'
-import CardProduct from '../../components/card-product/card-product'
-
+import ITEMS from '../../context/products.json';
+import Filters from '../../components/shop/filters/filters';
+import Sort from '../../components/sort/sort';
+import Search from '../../components/shop/search/search';
+import CardProduct from '../../components/card-product/card-product';
 
 const Shop = () => {
     const PRODUCTS = ITEMS.map(x => x);
@@ -63,6 +63,8 @@ const Shop = () => {
 
     return (
         <div className='shop'>
+            <Helmet title='Fake shop | Shop'/>
+            
             <header className='shop__header'>Shop</header>
             <div className='shop__content-c'>
                 <Filters

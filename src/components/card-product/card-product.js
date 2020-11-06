@@ -4,16 +4,19 @@ import './card-product.css'
 import { Link } from 'react-router-dom'
 import LazyImage from '../../lazy-image'
 
-const CardProduct = ({ id, title, price, btnText, className , disableLink}) => {
+const CardProduct = ({ id, title, price, btnText, className, disableLink }) => {
     const Image = process.env.PUBLIC_URL + `./assets/products/${id}-min.jpeg`
+
+    const HandleClickAction = (props) => {
+        return disableLink ?
+            <> {props.children} </>
+            :
+            <Link to={`shop/${id}`} className='link'> {props.children} </Link>
+    }
 
     return (
         <div className={`${className} card-product`}>
-            <Link 
-                to={`shop/${id}`} 
-                className='link'
-                onClick={(e) => disableLink && e.preventDefault()}
-            >
+            <HandleClickAction>
                 <div className='card-product__wrapper'>
                     <LazyImage
                         src={`/${Image}`}
@@ -29,7 +32,7 @@ const CardProduct = ({ id, title, price, btnText, className , disableLink}) => {
                     <h3>{title}</h3>
                     <p>{price}</p>
                 </div>
-            </Link>
+            </HandleClickAction>
         </div>
     )
 }

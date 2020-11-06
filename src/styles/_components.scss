@@ -24,17 +24,11 @@
 // styling lazy loading
 .lazy {
     opacity: 0;
-    transform: translateY(-10px);
-    transform: scale(0.98);
-    transition: all .45s ease;
-
-    &:nth-child(odd) {
-        transition: all .45s, .65s ease;
-    }
+    transform: scale(0.95);
+    transition: all .4s ease;
 }
 .loaded {
     opacity: 1;
-    transform: translateY(0px);
     transform: scale(1);
 }
 // styling lazy loading

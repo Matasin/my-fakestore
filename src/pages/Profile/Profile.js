@@ -1,5 +1,14 @@
 import React from 'react';
 
-const Profile = () => ( <div>Profile</div> )
+import { Helmet } from 'react-helmet';
+
+const Profile = () => (
+    <>
+        <Helmet title='Fake shop | John Doe' />
+        <div>
+            Profile
+        </div>
+    </>
+)
 
 export default Profile;

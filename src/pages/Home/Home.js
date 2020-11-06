@@ -1,12 +1,14 @@
 import React from 'react';
 import './home.css'
 
+import { Helmet } from 'react-helmet';
 import { Link } from "react-router-dom";
 import ITEMS from '../../context/products.json'
 import CardProduct from '../../components/card-product/card-product'
 
 const Home = () => (
     <>
+        <Helmet title='Fake shop | Home' />
         <div
             className='home lazy'
             data-bg={`/${process.env.PUBLIC_URL}./assets/home/header-img.jpeg`}

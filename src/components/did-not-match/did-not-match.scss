@@ -1,0 +1,39 @@
+.did-not-match {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 70vh;
+    max-height: 70vh;
+    padding: 0 15px;
+    color: #303132;
+    text-align: center;
+
+    &__decoration {
+        width: 40px;
+        height: 1px;
+        background-color: #303132;
+        margin: auto;
+    }
+
+    &__header {
+        font-size: 26px;
+    }
+
+    &__text {
+        opacity: .9;
+    }
+    
+    &__btn {
+        height: 35px;
+        width: 175px;
+        border: thin solid transparent;
+        opacity: .95;
+        margin-top: 25px;
+        &:hover {
+            border-color: rgb(141, 141, 141);
+            color: rgb(141, 141, 141);
+            font-weight: 700;
+        }
+    }
+}

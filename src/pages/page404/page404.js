@@ -1,24 +1,13 @@
 import React from 'react'
-import './page404.css';
 
-import { Link, useHistory } from 'react-router-dom'
-
+import { Helmet } from 'react-helmet';
+import DidNotMatch from '../../components/did-not-match/did-not-match'
 
 const Page404 = () => {
-    let history = useHistory();
-    const backToHome = () => {
-        history.push('/')
-        history.go(0)
-    }
     return (
         <div className='error'>
-            <h3>404 Not page found</h3>
-            <Link
-                to='/'
-                onClick={backToHome}
-            >
-                Go to  Home
-        </Link>
+            <Helmet title='Fake shop | page not found' />
+            <DidNotMatch header='Error 404 page not found' text='Seems like url is incorect' text2='Check it or:' link='home' />
         </div>
     )
 }

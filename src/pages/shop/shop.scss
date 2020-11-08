@@ -17,6 +17,15 @@
 
     &__filters {
         width: 20%;
+
+        input {
+            height: 30px;
+            margin: 3px 0;
+            padding-left: 10px;
+        }
+        .filters__acordion .acordion__content{
+            height: 100px;
+        }
     }
 
     &__products {

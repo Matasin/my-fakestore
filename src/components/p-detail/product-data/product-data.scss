@@ -8,7 +8,7 @@
 
     &__price {
         font-size: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
     &__sort {
@@ -18,13 +18,40 @@
         }
         & .sort__list {
             width: 100%;
-            box-shadow: rgb(192, 192, 192);;
+            box-shadow: rgb(192, 192, 192);
         }
+        &::before {
+            content: "Size";
+            position: absolute;
+            top: -16px;
+            color: #303132;
+            font-size: 14px;
+        }
+    }
+    &__sort--error {
+        &::after {
+            content: "Please choose the size";
+            color: red;
+        }
+    }
+
+    &__label {
+        font-size: 14px;
+        color: #303132;
+        margin-bottom: 5px;
+    }
+    &__quantity {
+        width: 60px;
+        height: 40px;
+        margin-bottom: 30px;
+        padding-left: 15px;
+        font-size: 16px;
+        color: #303132;
     }
 
     & .btn-primary {
         width: 100%;
-        margin: 5px auto;
+        margin: 7px auto;
         &:hover {
             opacity: 0.8;
         }

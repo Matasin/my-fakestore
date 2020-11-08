@@ -9,7 +9,7 @@
 
 .product-data__price {
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .product-data__sort {
@@ -26,9 +26,37 @@
           box-shadow: silver;
 }
 
+.product-data__sort::before {
+  content: "Size";
+  position: absolute;
+  top: -16px;
+  color: #303132;
+  font-size: 14px;
+}
+
+.product-data__sort--error::after {
+  content: "Please choose the size";
+  color: red;
+}
+
+.product-data__label {
+  font-size: 14px;
+  color: #303132;
+  margin-bottom: 5px;
+}
+
+.product-data__quantity {
+  width: 60px;
+  height: 40px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  font-size: 16px;
+  color: #303132;
+}
+
 .product-data .btn-primary {
   width: 100%;
-  margin: 5px auto;
+  margin: 7px auto;
 }
 
 .product-data .btn-primary:hover {

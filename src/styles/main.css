@@ -88,12 +88,9 @@ html, body {
 }
 
 input[type=number] {
-  height: 30px;
-  margin: 3px 0;
   border: thin solid silver;
   outline: none;
   font-family: "Raleway", sans-serif;
-  padding-left: 10px;
 }
 
 ::-webkit-scrollbar {

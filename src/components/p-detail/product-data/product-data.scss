@@ -12,7 +12,7 @@
     }
 
     &__sort {
-        margin: 30px 0;
+        margin-bottom: 30px;
         & .sort__btn {
             border-color: rgb(192, 192, 192);
         }
@@ -20,18 +20,28 @@
             width: 100%;
             box-shadow: rgb(192, 192, 192);
         }
-        &::before {
-            content: "Size";
-            position: absolute;
-            top: -16px;
-            color: #303132;
-            font-size: 14px;
-        }
     }
     &__sort--error {
+        &::before {
+            content: "";
+            position: absolute;
+            top: -6px;
+            right: 10%;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #303132;
+        }
         &::after {
-            content: "Please choose the size";
-            color: red;
+            content: 'Please choose a size';
+            position: absolute;
+            width: max-content;
+            text-align: center;
+            background-color: #303132;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            top: -30px;
+            right: 10%;
         }
     }
 

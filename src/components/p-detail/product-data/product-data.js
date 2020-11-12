@@ -13,12 +13,12 @@ const ProductData = ({ item }) => {
 
     const [size, setSize] = useState();
     const [error, setError] = useState(false);
-    const [guantity, setGuantity] = useState(1);
+    const [quantity, setQuantity] = useState(1);
 
     const validInput = (e) => {
-        if (e.key === 'e' || e.key === '-' || e.key === '0' || e.key === '.' || e.key === ','){
+        if (e.key === 'e' || e.key === '-' || e.key === '.' || e.key === ','){
             e.preventDefault();
-            setGuantity(1)
+            setQuantity(1);
         }
     }
     const optionsToSet = [
@@ -40,7 +40,7 @@ const ProductData = ({ item }) => {
     ];
 
     const addToCart = () => {
-        if (size) {
+        if(size) {
             setItemsCart([...itemsCart, {
                 id: id,
                 title: title,
@@ -49,9 +49,9 @@ const ProductData = ({ item }) => {
                 description: description,
 
                 size: size,
-                guantity: guantity === '' && 1
+                quantity: quantity
             }])
-            return alert('added');
+            return alert('Added');
         }
         setError(true);
     }
@@ -60,6 +60,7 @@ const ProductData = ({ item }) => {
             <h1 className='product-data__header'>{title}</h1>
             <div className='product-data__price'>${price}</div>
 
+            <div className='product-data__label'>Size</div>
             <Sort
                 className={`product-data__sort ${error && 'product-data__sort--error'}`}
                 firstLabel='select'
@@ -67,12 +68,12 @@ const ProductData = ({ item }) => {
                 setAction={setSize}
             />
 
-            <div className='product-data__label'>Guantity</div>
+            <div className='product-data__label'>Quantity</div>
             <input
                 className='product-data__quantity'
                 type='number'
-                value={guantity}
-                onChange={(e) => setGuantity(e.target.value)}
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
                 min={1}
                 onKeyDown={validInput}
             />

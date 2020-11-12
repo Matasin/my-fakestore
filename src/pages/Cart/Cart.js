@@ -1,4 +1,5 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
+import './cart.css'
 
 import { Helmet } from 'react-helmet';
 import { CartContext } from '../../context/cart-context';
@@ -6,23 +7,21 @@ import { CartContext } from '../../context/cart-context';
 import DidNotMatch from '../../components/did-not-match/did-not-match'
 
 const Cart = () => {
-    const [cartitems, setCartItems] = useContext(CartContext);
-
-    useEffect(() => {   
-        console.log(cartitems)
-    }, [cartitems])
-
+    const [cartItems, setCartItems] = useContext(CartContext);
 
     const removeFromCart = (orderId) => {
-        const itemsAfterDelete = [...cartitems].filter(item => {
+        const itemsAfterDelete = [...cartItems].filter(item => {
             return item.id !== orderId;
         });
         setCartItems(itemsAfterDelete)
     }
+    const clearCart = () => {
+        localStorage.removeItem('items');
+    }
     return (
-        <div>
-            <Helmet title={`Fake shop | ${cartitems.length !== 0 && `Items in cart: ${cartitems.length}`}`} />
-            {cartitems.length === 0 ?
+        <div className='cart'>
+            <Helmet title={`Fake shop | ${cartItems.length !== 0 && `Items in cart: ${cartItems.length}`}`} />
+            {cartItems.length === 0 ?
                 <DidNotMatch
                     header='Cart is empty for now'
                     text='But you can change it! '
@@ -30,16 +29,18 @@ const Cart = () => {
                 />
                 :
                 <>
-                    <h4>Products in cart: {cartitems.length}</h4>
-                    {cartitems.map(({ id, title, price, summary, description, size, guantity }) => {
+                    <h4>Products in cart: {cartItems.length}</h4>
+                    <button onClick={clearCart} className='btn-primary'>clear cart</button>
+                    {cartItems.map(({ id, title, price, summary, description, size, quantity }) => {
                         return (
                             <div key={id}>
-                                <li>{title}</li>
+                                <li>id: {id}</li>
+                                {/* <li>{title}</li>
                                 <li>{price}</li>
                                 <li>{summary}</li>
                                 <li>{description}</li>
-                                <li>{size}</li>
-                                <li>{guantity}</li>
+                                <li>{size}</li> */}
+                                <li>quantity: {quantity}</li>
                                 <button onClick={() => removeFromCart(id)}>Remove</button>
                                 <hr />
                             </div>

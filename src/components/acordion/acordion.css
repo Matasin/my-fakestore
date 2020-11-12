@@ -37,7 +37,7 @@
 
 .acordion__btn::before, .acordion__btn::after {
   position: absolute;
-  right: 15px;
+  right: 25px;
   content: "";
   height: 11px;
   width: 1px;

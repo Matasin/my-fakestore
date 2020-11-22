@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         const tab = [...items];
-        const newTab = [{}];
+        const newTab = [];
 
         for (let i = 0; i < tab.length; i++) {
             const temp = tab[i];

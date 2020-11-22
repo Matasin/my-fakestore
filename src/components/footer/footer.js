@@ -44,7 +44,7 @@ const Footer = () => (
             </div>
         </footer>
         <p className='footer__copy-right'>
-            &copy; 2020 by <i>young delevoper</i>, this page was inspiring by template from wix.com with my own small changes
+            &copy; 2020 by <i>young developer</i>, this page was inspired by template from wix.com with my own small changes
         </p>
     </>
 )

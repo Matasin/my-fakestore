@@ -1,1 +1,36 @@
-/* No CSS *//*# sourceMappingURL=cart.css.map */
+.cart {
+  max-width: 950px;
+  margin: 150px auto 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart .order-products {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+}
+
+.cart .order-products__header {
+  font-size: 20px;
+  font-weight: 400;
+  color: #303132;
+  margin: 0;
+  padding: 1em 0;
+  -webkit-box-shadow: 0px 1px 1px -1px #303132;
+          box-shadow: 0px 1px 1px -1px #303132;
+}
+
+.cart .order-summary {
+  -webkit-box-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  margin-left: 5%;
+  text-align: center;
+  background-color: #ece5e5;
+}
+/*# sourceMappingURL=cart.css.map */

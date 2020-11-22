@@ -3,6 +3,7 @@ import './cart.css'
 
 import { Helmet } from 'react-helmet';
 import { CartContext } from '../../context/cart-context';
+import ProductOrder from '../../components/product-order/product-order'
 
 import DidNotMatch from '../../components/did-not-match/did-not-match'
 
@@ -16,40 +17,40 @@ const Cart = () => {
         setCartItems(itemsAfterDelete)
     }
     const clearCart = () => {
-        localStorage.removeItem('items');
+        setCartItems([]) // refresing component and there is no reason of using history etc
     }
     return (
-        <div className='cart'>
-            <Helmet title={`Fake shop | ${cartItems.length !== 0 && `Items in cart: ${cartItems.length}`}`} />
-            {cartItems.length === 0 ?
-                <DidNotMatch
-                    header='Cart is empty for now'
-                    text='But you can change it! '
-                    link='shop'
-                />
-                :
-                <>
-                    <h4>Products in cart: {cartItems.length}</h4>
-                    <button onClick={clearCart} className='btn-primary'>clear cart</button>
-                    {cartItems.map(({ id, title, price, summary, description, size, quantity }) => {
-                        return (
-                            <div key={id}>
-                                <li>id: {id}</li>
-                                {/* <li>{title}</li>
-                                <li>{price}</li>
-                                <li>{summary}</li>
-                                <li>{description}</li>
-                                <li>{size}</li> */}
-                                <li>quantity: {quantity}</li>
-                                <button onClick={() => removeFromCart(id)}>Remove</button>
-                                <hr />
-                            </div>
-                        )
-                    })}
-                </>
-            }
-
-        </div>
+        cartItems.length === 0 ?
+            (<DidNotMatch
+                header='Cart is empty for now'
+                text='But you can change it! '
+                link='shop'
+            />
+            ) : (
+                <div className='cart'>
+                    <Helmet title={`Fake shop | Cart (${cartItems.length})`} />
+                    <div className='order-products'>
+                        <h3 className='order-products__header'>My Cart: {cartItems.length}</h3>
+                        {cartItems.map(({ id, title, price, size, quantity }) => {
+                            return (
+                                <ProductOrder
+                                    key={id}
+                                    id={id}
+                                    title={title}
+                                    price={price}
+                                    size={size}
+                                    quantity={quantity}
+                                    callback={() => removeFromCart(id)}
+                                />
+                            )
+                        })}
+                        <button onClick={clearCart} className='btn-primary'>clear cart</button>
+                    </div>
+                    <div className='order-summary'>
+                        summary here
+                    </div>
+                </div>
+            )
     )
 }
 

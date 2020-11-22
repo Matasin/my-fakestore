@@ -25,7 +25,7 @@
 .lazy {
     opacity: 0;
     transform: scale(0.95);
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 .loaded {
     opacity: 1;
@@ -67,7 +67,7 @@
 }
 // arrows
 
-input[type=number] {
+input[type="number"] {
     border: $border-thin;
     outline: none;
     font-family: "Raleway", sans-serif;
@@ -78,10 +78,10 @@ input[type=number] {
     width: 15px;
 }
 ::-webkit-scrollbar-track {
-    background: #E6E6E6;
+    background: #e6e6e6;
 }
 ::-webkit-scrollbar-thumb {
-    background:#7e7777;
+    background: #7e7777;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(141, 140, 140);
